@@ -1,68 +1,95 @@
 <template>
-  <section class="py-20 px-4 sm:px-8 lg:pl-80 lg:pr-8">
+  <section class="py-20 px-4 sm:px-8 lg:px-8">
+
     <div class="max-w-6xl mx-auto">
       <!-- Section Header -->
       <div class="mb-16">
-        <h2 class="text-4xl sm:text-5xl font-bold text-foreground mb-4">Selected Work</h2>
-        <p class="text-muted-foreground text-lg">
-          Projects that showcase my approach to design and development
+        <h2 class="text-4xl font-mono sm:text-5xl font-bold text-foreground mb-4">Portfolio Highlights</h2>
+        <p class="text-muted-foreground text-lg font-mono">
+          A curated selection of projects that reflect my passion for crafting clean, functional, and impactful digital experiences.
         </p>
+
+
       </div>
+
+
 
       <!-- Filter Buttons -->
       <div class="flex gap-3 mb-12 flex-wrap">
-        <button
-            v-for="tag in filterTags"
-            :key="tag"
-            @click="selectedTag = selectedTag === tag ? null : tag"
-            :class="[
-            'px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm',
-            selectedTag === tag
-              ? 'bg-accent text-background shadow-lg shadow-accent/50'
-              : 'bg-muted text-foreground hover:bg-muted/80'
-          ]"
-        >
-          {{ tag }}
-        </button>
+
+
+        <div class="flex gap-3 mb-12 flex-wrap font-mono">
+          <button
+              v-for="tag in filterTags"
+              :key="tag"
+              @click="selectedTag = selectedTag === tag ? null : tag"
+              :class="[
+                'px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm',
+                selectedTag === tag
+                  ? 'bg-accent text-background shadow-md shadow-accent/40'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              ]"
+          >
+            {{ tag }}
+          </button>
+        </div>
+
+
       </div>
 
       <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono">
         <div
             v-for="project in filteredProjects"
             :key="project.id"
             @click="openModal(project)"
-            class="group cursor-pointer"
-        >
+            class="group cursor-pointer">
           <!-- Project Card -->
+
           <div
               class="relative rounded-xl overflow-hidden mb-4 aspect-video bg-gradient-to-br from-muted to-muted/50 hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2"
           >
+            <!-- Project Image -->
+            <img
+                :src="project.image"
+                alt="Project Image"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <!-- Stronger Overlay Gradient -->
             <div
-                class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-6"
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-6"
             >
               <div>
-                <h3 class="text-xl font-bold text-white mb-1">{{ project.title }}</h3>
-                <p class="text-sm text-gray-300">{{ project.category }}</p>
+                <h3 class="text-xl font-semibold text-white drop-shadow-md mb-1">
+                  {{ project.title }}
+                </h3>
+                <p class="text-sm text-gray-200 drop-shadow">{{ project.category }}</p>
               </div>
             </div>
           </div>
 
+
+
           <!-- Project Info -->
-          <div class="space-y-2">
-            <p class="text-muted-foreground text-sm line-clamp-2">{{ project.description }}</p>
+          <div class="space-y-2 font-mono">
+            <p class="text-muted-foreground text-sm line-clamp-2 text-gray-600">
+              {{ project.description }}
+            </p>
             <div class="flex gap-2 flex-wrap">
-              <span
-                  v-for="tech in project.tech"
-                  :key="tech"
-                  class="px-3 py-1 text-xs bg-muted text-muted-foreground rounded-full group-hover:bg-accent group-hover:text-background transition-all duration-300"
-              >
-                {{ tech }}
-              </span>
+      <span
+          v-for="tech in project.tech"
+          :key="tech"
+          class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-full group-hover:bg-gray-200 transition-all duration-300">
+        {{ tech }}
+      </span>
+
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
 
     <!-- Project Modal -->
@@ -126,7 +153,8 @@
                   Solution
                 </h3>
                 <p class="text-muted-foreground leading-relaxed">
-                  Built a modular architecture using Vue 3, Node.js, and Redis caching to deliver a smooth and optimized UX.
+                  Built a modular architecture using Vue 3, Node.js, and Redis caching to deliver a smooth and optimized
+                  UX.
                 </p>
               </div>
             </section>
@@ -197,7 +225,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import {ref, computed} from 'vue'
 
 const selectedTag = ref(null)
 const isModalOpen = ref(false)
@@ -212,7 +240,9 @@ const projects = [
     description:
         'Real-time analytics platform with WebSocket integration and advanced data visualization.',
     tech: ['Vue 3', 'Node.js', 'PostgreSQL', 'TailwindCSS'],
-    tags: ['Full-Stack', 'Frontend']
+    tags: ['Full-Stack', 'Frontend'],
+    image: "/images/bug-app.png",
+
   },
   {
     id: 2,
@@ -221,7 +251,8 @@ const projects = [
     description:
         'Responsive shopping experience with optimized performance and accessibility.',
     tech: ['React', 'TypeScript', 'Stripe', 'Next.js'],
-    tags: ['Frontend', 'Design']
+    tags: ['Frontend', 'Design'],
+    image: "/images/bug-app.png",
   },
   {
     id: 3,
@@ -230,7 +261,8 @@ const projects = [
     description:
         'Comprehensive component library with 50+ components and documentation.',
     tech: ['Vue 3', 'Storybook', 'TailwindCSS'],
-    tags: ['Design', 'Frontend']
+    tags: ['Design', 'Frontend'],
+    image: "/images/bug-app.png",
   },
   {
     id: 4,
@@ -239,7 +271,8 @@ const projects = [
     description:
         'Improved Core Web Vitals by 60% through strategic optimization techniques.',
     tech: ['Next.js', 'Lighthouse', 'Performance'],
-    tags: ['Performance', 'Frontend']
+    tags: ['Performance', 'Frontend'],
+    image: "/images/bug-app.png",
   },
   {
     id: 5,
@@ -248,7 +281,8 @@ const projects = [
     description:
         'Cross-platform mobile application with offline-first architecture.',
     tech: ['React Native', 'Firebase', 'Redux'],
-    tags: ['Full-Stack', 'Frontend']
+    tags: ['Full-Stack', 'Frontend'],
+    image: "/images/bug-app.png",
   },
   {
     id: 6,
@@ -257,7 +291,8 @@ const projects = [
     description:
         'High-performance API layer with rate limiting and caching strategies.',
     tech: ['Node.js', 'Express', 'Redis'],
-    tags: ['Full-Stack']
+    tags: ['Full-Stack'],
+    image: "/images/bug-app.png",
   }
 ]
 
@@ -277,20 +312,38 @@ const closeModal = () => {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
 .modal-fade-enter-active,
 .modal-fade-leave-active {
   transition: opacity 0.35s ease;
 }
+
 .modal-fade-enter-from,
 .modal-fade-leave-to {
   opacity: 0;
 }
 
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
 }
+
+.text-muted-foreground {
+  color: hsl(240, 4%, 47%);
+}
+
 </style>

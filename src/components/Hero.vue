@@ -4,9 +4,6 @@
   <section
       class="min-h-screen bg-gradient-to-b from-background via-background/95 to-background text-foreground flex items-center justify-center px-4 sm:px-8  pb-20 font-mono relative overflow-hidden">
     <!-- Subtle background gradient or glow -->
-
-
-
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(120,119,198,0.06)_0%,transparent_70%)]"></div>
 
     <div class="max-w-5xl w-full relative z-10 text-center sm:text-left">
