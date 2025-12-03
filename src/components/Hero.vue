@@ -1,77 +1,82 @@
 <template>
 
-
-  <section
-      class="min-h-screen bg-gradient-to-b from-background via-background/95 to-background text-foreground flex items-center justify-center px-4 sm:px-8  pb-20 font-mono relative overflow-hidden">
-    <!-- Subtle background gradient or glow -->
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(120,119,198,0.06)_0%,transparent_70%)]"></div>
-
-    <div class="max-w-5xl w-full relative z-10 text-center sm:text-left">
+  <section class="min-h-[calc(100vh-5rem)] flex items-center justify-center py-12
+  bg-gradient-to-b
+from-[var(--color-background)] to-[var(--color-background)]
+  text-[var(--color-foreground)] px-4 sm:px-8 font-mono relative overflow-hidden">
 
 
-    <!-- Intro Text -->
-      <div class="mb-14">
-        <h1 class="text-6xl sm:text-7xl font-extrabold tracking-tight leading-[1.1] mb-4">
-          Md. <span class="text-accent">Jubayer Islam</span>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.06)_0%,transparent_70%)]"></div>
+
+    <div class="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 lg:gap-16 relative z-10">
+
+      <div class="text-center md:text-left space-y-6 md:flex-1 md:w-[70%]">
+        <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight leading-[1.1]">
+          Md. <span class="text-[var(--color-accent)]">Jubayer Islam</span>
         </h1>
-        <p class="text-xl text-muted-foreground/90 font-light mb-2">Full-Stack Developer & Creative Engineer</p>
-        <p class="text-base sm:text-lg text-muted-foreground/70 max-w-2xl leading-relaxed">
+
+        <p class="text-xl text-[var(--color-muted-foreground)]/90 font-light">
+          Full-Stack Developer & Creative Engineer
+        </p>
+
+        <p class="text-base sm:text-lg text-[var(--color-muted-foreground)]/70 max-w-lg leading-relaxed mx-auto md:mx-0">
           I build fast, scalable, and visually beautiful web experiences — transforming ideas into products that deliver impact.
         </p>
 
-      </div>
-
-      <!-- CTA Buttons -->
-      <div
-          class="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-20 sm:mb-24 justify-center sm:justify-start">
-
-        <button class="px-8 py-3 bg-accent text-background rounded-lg font-medium hover:scale-[1.03] hover:shadow-accent/30 shadow-sm transition-all duration-300">
-          View My Work
-        </button>
-
-        <button class="px-8 py-3 border border-accent/30 rounded-lg font-medium hover:bg-accent/10 transition-all duration-300">
-          Get In Touch
-        </button>
-
-
-      </div>
-
-      <!-- Quick Stats -->
-      <div
-          class="grid grid-cols-3 sm:gap-8 gap-6 text-center sm:text-left animate-fadeIn delay-200"
-      >
-        <div>
-          <div class="text-3xl sm:text-4xl font-bold text-accent mb-1">50+</div>
-          <p class="text-xs sm:text-sm text-muted-foreground uppercase tracking-wide">
-            Projects Completed
-          </p>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start pt-6">
+          <button class="px-8 py-3 bg-[var(--color-accent)] text-[var(--color-background)] rounded-lg font-medium
+                hover:scale-[1.03] hover:shadow-[var(--color-accent)]/30 shadow-sm
+                transition-all duration-300 cursor-pointer">
+            View My Work
+          </button>
+          <button class="px-8 py-3 border border-[var(--color-accent)]/30 rounded-lg font-medium
+                hover:bg-[var(--color-accent)]/10 transition-all duration-300 cursor-pointer">
+            Get In Touch
+          </button>
         </div>
-        <div>
-          <div class="text-3xl sm:text-4xl font-bold text-accent mb-1">8 yrs</div>
-          <p class="text-xs sm:text-sm text-muted-foreground uppercase tracking-wide">
-            Experience
-          </p>
-        </div>
-        <div>
-          <div class="text-3xl sm:text-4xl font-bold text-accent mb-1">30+</div>
-          <p class="text-xs sm:text-sm text-muted-foreground uppercase tracking-wide">
-            Happy Clients
-          </p>
+
+        <div class="grid grid-cols-3 gap-6 text-center md:text-left pt-8 md:pt-12">
+          <div>
+            <div class="text-3xl sm:text-4xl font-bold text-[var(--color-accent)] mb-1">50+</div>
+            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] uppercase tracking-wide">Projects Completed</p>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-bold text-[var(--color-accent)] mb-1">8 yrs</div>
+            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] uppercase tracking-wide">Experience</p>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-bold text-[var(--color-accent)] mb-1">30+</div>
+            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] uppercase tracking-wide">Happy Clients</p>
+          </div>
         </div>
       </div>
+
+      <div class="flex justify-center md:justify-end md:w-[30%]">
+        <div class="relative w-64 sm:w-72 md:w-80 lg:w-96 aspect-square rounded-full
+          bg-gradient-to-tr from-[var(--color-accent)]/30 to-[var(--color-accent)]/10
+          border border-[var(--color-accent)]/20 flex items-center justify-center
+          overflow-hidden shadow-lg shadow-[var(--accent)]/10 animate-float">
+          <img :src="profileImage" alt="Jubayer Islam" class="w-full h-full rounded-full object-cover transform hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 rounded-full bg-[var(--color-accent)]/10 blur-3xl animate-pulse opacity-60"></div>
+        </div>
+      </div>
+
     </div>
   </section>
+
 </template>
 
+
 <script setup>
+
+const profileImage = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
+
+// const profileImage = 'img/profile.webp';
+
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
 
-.font-mono {
-  font-family: 'JetBrains Mono', monospace;
-}
 
 @keyframes fadeIn {
   0% {
@@ -83,6 +88,16 @@
     transform: translateY(0);
   }
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
 
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out forwards;

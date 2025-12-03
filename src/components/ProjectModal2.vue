@@ -1,16 +1,19 @@
 <template>
   <transition name="modal-fade">
-    <div v-if="isModalOpen" class="fixed inset-0 bg-background/90 backdrop-blur-xl flex items-center justify-center p-4 z-50">
+    <div
+        v-if="isOpen"
+        class="fixed inset-0 bg-background/80 backdrop-blur-xl flex items-center justify-center p-4 z-50"
+    >
       <div
-          class="relative bg-background/95 border border-white/10 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto ring-1 ring-accent/10"
+          class="relative bg-background/95 border border-border/60 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto ring-1 ring-accent/10"
           @click.stop
       >
         <!-- Close Button -->
         <button
             @click="closeModal"
-            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl text-foreground hover:bg-muted/50 transition-all duration-300 z-10 border border-white/10"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl hover:bg-muted/50 transition-all duration-300 z-10"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          ✕
         </button>
 
         <!-- Content -->
@@ -18,21 +21,21 @@
           <!-- Header -->
           <header class="mb-10 text-center animate-fade-in">
             <h2 class="text-4xl sm:text-5xl font-bold text-foreground mb-3">
-              {{ activeProject.title }}
+              {{ project.title }}
             </h2>
             <p class="text-lg sm:text-xl text-muted-foreground/80 leading-relaxed max-w-2xl mx-auto">
-              {{ activeProject.description }}
+              {{ project.description }}
             </p>
           </header>
 
           <!-- Project Preview -->
-          <div class="w-full aspect-video bg-muted/40 rounded-2xl mb-10 overflow-hidden relative flex items-center justify-center group border border-white/10">
-            <img
-                :src="activeProject.image"
-                :alt="activeProject.title"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null;this.src='https://placehold.co/800x450/1e293b/a5f3fc?text=Project+Showcase';"
-            />
+          <div
+              class="w-full aspect-video bg-gradient-to-br from-accent/15 to-muted/10 rounded-2xl mb-10 overflow-hidden relative flex items-center justify-center group"
+          >
+            <div class="text-center transition-transform duration-500 group-hover:scale-105">
+              <div class="text-6xl mb-4">📊</div>
+              <p class="text-muted-foreground">Project Showcase</p>
+            </div>
           </div>
 
           <!-- Challenge & Solution -->
@@ -42,7 +45,7 @@
                 Challenge
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                The client needed a scalable and performant platform to manage complex workflows efficiently.
+                The client needed a real-time data processing platform that scaled dynamically with minimal latency.
               </p>
             </div>
             <div>
@@ -50,13 +53,15 @@
                 Solution
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Built a modular architecture using Vue 3, Node.js, and Redis caching to deliver a smooth and optimized UX.
+                Built a WebSocket + Redis + PostgreSQL architecture achieving sub-100ms responses under peak load.
               </p>
             </div>
           </section>
 
           <!-- Results -->
-          <section class="bg-muted/40 backdrop-blur-sm rounded-2xl p-8 sm:p-10 mb-12 border border-white/10">
+          <section
+              class="bg-muted/30 backdrop-blur-sm rounded-2xl p-8 sm:p-10 mb-12 border border-border/50"
+          >
             <h3 class="text-sm uppercase tracking-widest text-accent mb-6 font-semibold">
               Results
             </h3>
@@ -82,13 +87,13 @@
               Tech Stack
             </h3>
             <div class="flex flex-wrap gap-3">
-                                    <span
-                                        v-for="tech in activeProject.tech"
-                                        :key="tech"
-                                        class="px-4 py-2 bg-accent/10 border border-accent/30 rounded-lg text-sm text-accent font-medium"
-                                    >
-                                        {{ tech }}
-                                    </span>
+              <span
+                  v-for="tech in project.tech"
+                  :key="tech"
+                  class="px-4 py-2 bg-accent/10 border border-accent/20 rounded-lg text-sm text-accent font-medium"
+              >
+                {{ tech }}
+              </span>
             </div>
           </section>
 
@@ -104,7 +109,7 @@
             <a
                 href="#"
                 target="_blank"
-                class="px-8 py-3 border border-white/20 text-foreground rounded-xl font-semibold hover:bg-muted/40 transition-all duration-300 text-center"
+                class="px-8 py-3 border border-border rounded-xl font-semibold hover:bg-muted/40 transition-all duration-300 text-center"
             >
               💻 View Source Code
             </a>

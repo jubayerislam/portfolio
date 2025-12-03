@@ -1,95 +1,113 @@
 <template>
-  <!-- PORTFOLIO SECTION -->
-  <section id="work" class="py-20 px-4 sm:px-8 lg:px-12 bg-[var(--color-background)] border-t border-white/10">
-    <div class="max-w-7xl mx-auto">
+  <section class="py-20 px-4 sm:px-8 lg:px-8">
+
+    <div class="max-w-6xl mx-auto">
       <!-- Section Header -->
-      <div class="mb-16 text-center">
-        <h2 class="text-4xl font-mono sm:text-5xl font-bold text-[var(--color-foreground)] mb-4">Portfolio Highlights</h2>
-        <p class="text-muted-foreground text-lg font-mono max-w-2xl mx-auto">
+      <div class="mb-16">
+        <h2 class="text-4xl font-mono sm:text-5xl font-bold text-foreground mb-4">Portfolio Highlights</h2>
+        <p class="text-muted-foreground text-lg font-mono">
           A curated selection of projects that reflect my passion for crafting clean, functional, and impactful digital experiences.
         </p>
+
+
       </div>
 
+
+
       <!-- Filter Buttons -->
-      <div class="flex gap-3 mb-12 flex-wrap justify-center font-mono">
-        <button
-            v-for="tag in filterTags"
-            :key="tag"
-            @click="selectedTag = selectedTag === tag ? null : tag"
-            :class="[
-                            'px-5 py-2 rounded-xl font-medium transition-all duration-300 text-sm border cursor-pointer',
-                          selectedTag === tag
-    ? 'bg-[var(--color-accent)] text-[var(--color-background)] shadow-[0_1px_2px_var(--color-accent)] border-[var(--color-accent)]'
-    : 'bg-muted/30 text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted-foreground)]/10 border-white/10'
+      <div class="flex gap-3 mb-12 flex-wrap">
 
 
-                        ]"
-        >
-          {{ tag }}
-        </button>
+        <div class="flex gap-3 mb-12 flex-wrap font-mono">
+          <button
+              v-for="tag in filterTags"
+              :key="tag"
+              @click="selectedTag = selectedTag === tag ? null : tag"
+              :class="[
+                'px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm',
+                selectedTag === tag
+                  ? 'bg-accent text-background shadow-md shadow-accent/40'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              ]"
+          >
+            {{ tag }}
+          </button>
+        </div>
+
+
       </div>
 
       <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-mono">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono">
         <div
             v-for="project in filteredProjects"
             :key="project.id"
             @click="openModal(project)"
-            class="group cursor-pointer p-5 bg-[var(--color-muted)]/20 rounded-xl border border-white/10 shadow-lg hover:shadow-[0_4px_16px_var(--color-accent)]/30
-            transition-all duration-500 transform hover:-translate-y-2">
-          <!-- Project Image/Preview -->
+            class="group cursor-pointer">
+          <!-- Project Card -->
+
           <div
-              class="relative rounded-lg overflow-hidden mb-4 aspect-video bg-gradient-to-br from-muted/50 to-muted/80"
+              class="relative rounded-xl overflow-hidden mb-4 aspect-video bg-gradient-to-br from-muted to-muted/50 hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2"
           >
+            <!-- Project Image -->
             <img
                 :src="project.image"
-                :alt="project.title"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/a5f3fc?text=Project';"
+                alt="Project Image"
+                class="absolute inset-0 w-full h-full object-cover"
             />
 
-            <!-- Info Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
+            <!-- Stronger Overlay Gradient -->
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-6"
+            >
               <div>
                 <h3 class="text-xl font-semibold text-white drop-shadow-md mb-1">
                   {{ project.title }}
                 </h3>
-                <p class="text-sm text-gray-300 drop-shadow">{{ project.category }}</p>
+                <p class="text-sm text-gray-200 drop-shadow">{{ project.category }}</p>
               </div>
             </div>
           </div>
 
+
+
           <!-- Project Info -->
-          <div class="space-y-3">
-            <p class="text-[var(--color-muted-foreground)]/80 text-sm line-clamp-3">
+          <div class="space-y-2 font-mono">
+            <p class="text-muted-foreground text-sm line-clamp-2 text-gray-600">
               {{ project.description }}
             </p>
             <div class="flex gap-2 flex-wrap">
-                                <span
-                                    v-for="tech in project.tech"
-                                    :key="tech"
-                                    class="px-3 py-1 text-xs font-medium text-[var(--color-accent)] bg-[var(--color-accent)]/10 rounded-full border border-[var(--color-accent)]/20">
-                                    {{ tech }}
-                                </span>
+      <span
+          v-for="tech in project.tech"
+          :key="tech"
+          class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-full group-hover:bg-gray-200 transition-all duration-300">
+        {{ tech }}
+      </span>
+
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
 
     <!-- Project Modal -->
     <transition name="modal-fade">
-      <div v-if="isModalOpen" class="fixed inset-0 bg-background/90 backdrop-blur-xl flex items-center justify-center p-4 z-50">
+      <div
+          v-if="isModalOpen"
+          class="fixed inset-0 bg-background/80 backdrop-blur-xl flex items-center justify-center p-4 z-50"
+      >
         <div
-            class="relative bg-background/95 border border-white/10 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto ring-1 ring-accent/10"
+            class="relative bg-background/95 border border-border/60 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto ring-1 ring-accent/10"
             @click.stop
         >
           <!-- Close Button -->
           <button
               @click="closeModal"
-              class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl text-foreground hover:bg-muted/50 transition-all duration-300 z-10 border border-white/10"
+              class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl hover:bg-muted/50 transition-all duration-300 z-10"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            ✕
           </button>
 
           <!-- Content -->
@@ -99,25 +117,29 @@
               <h2 class="text-4xl sm:text-5xl font-bold text-foreground mb-3">
                 {{ activeProject.title }}
               </h2>
-              <p class="text-lg sm:text-xl text-muted-foreground/80 leading-relaxed max-w-2xl mx-auto">
+              <p
+                  class="text-lg sm:text-xl text-muted-foreground/80 leading-relaxed max-w-2xl mx-auto"
+              >
                 {{ activeProject.description }}
               </p>
             </header>
 
             <!-- Project Preview -->
-            <div class="w-full aspect-video bg-muted/40 rounded-2xl mb-10 overflow-hidden relative flex items-center justify-center group border border-white/10">
-              <img
-                  :src="activeProject.image"
-                  :alt="activeProject.title"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  onerror="this.onerror=null;this.src='https://placehold.co/800x450/1e293b/a5f3fc?text=Project+Showcase';"
-              />
+            <div
+                class="w-full aspect-video bg-gradient-to-br from-accent/15 to-muted/10 rounded-2xl mb-10 overflow-hidden relative flex items-center justify-center group"
+            >
+              <div class="text-center transition-transform duration-500 group-hover:scale-105">
+                <div class="text-6xl mb-4">📊</div>
+                <p class="text-muted-foreground">Project Showcase</p>
+              </div>
             </div>
 
             <!-- Challenge & Solution -->
             <section class="grid md:grid-cols-2 gap-10 mb-12">
               <div>
-                <h3 class="text-sm uppercase tracking-widest text-accent font-semibold mb-3">
+                <h3
+                    class="text-sm uppercase tracking-widest text-accent font-semibold mb-3"
+                >
                   Challenge
                 </h3>
                 <p class="text-muted-foreground leading-relaxed">
@@ -125,17 +147,22 @@
                 </p>
               </div>
               <div>
-                <h3 class="text-sm uppercase tracking-widest text-accent font-semibold mb-3">
+                <h3
+                    class="text-sm uppercase tracking-widest text-accent font-semibold mb-3"
+                >
                   Solution
                 </h3>
                 <p class="text-muted-foreground leading-relaxed">
-                  Built a modular architecture using Vue 3, Node.js, and Redis caching to deliver a smooth and optimized UX.
+                  Built a modular architecture using Vue 3, Node.js, and Redis caching to deliver a smooth and optimized
+                  UX.
                 </p>
               </div>
             </section>
 
             <!-- Results -->
-            <section class="bg-muted/40 backdrop-blur-sm rounded-2xl p-8 sm:p-10 mb-12 border border-white/10">
+            <section
+                class="bg-muted/30 backdrop-blur-sm rounded-2xl p-8 sm:p-10 mb-12 border border-border/50"
+            >
               <h3 class="text-sm uppercase tracking-widest text-accent mb-6 font-semibold">
                 Results
               </h3>
@@ -157,17 +184,19 @@
 
             <!-- Tech Stack -->
             <section class="mb-12">
-              <h3 class="text-sm uppercase tracking-widest text-accent mb-4 font-semibold">
+              <h3
+                  class="text-sm uppercase tracking-widest text-accent mb-4 font-semibold"
+              >
                 Tech Stack
               </h3>
               <div class="flex flex-wrap gap-3">
-                                    <span
-                                        v-for="tech in activeProject.tech"
-                                        :key="tech"
-                                        class="px-4 py-2 bg-accent/10 border border-accent/30 rounded-lg text-sm text-accent font-medium"
-                                    >
-                                        {{ tech }}
-                                    </span>
+                <span
+                    v-for="tech in activeProject.tech"
+                    :key="tech"
+                    class="px-4 py-2 bg-accent/10 border border-accent/20 rounded-lg text-sm text-accent font-medium"
+                >
+                  {{ tech }}
+                </span>
               </div>
             </section>
 
@@ -183,7 +212,7 @@
               <a
                   href="#"
                   target="_blank"
-                  class="px-8 py-3 border border-white/20 text-foreground rounded-xl font-semibold hover:bg-muted/40 transition-all duration-300 text-center"
+                  class="px-8 py-3 border border-border rounded-xl font-semibold hover:bg-muted/40 transition-all duration-300 text-center"
               >
                 💻 View Source Code
               </a>

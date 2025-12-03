@@ -1,14 +1,37 @@
-/* 1️⃣ Google Fonts first */
+/* 1️⃣ Google Font */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+/* 2️⃣ Import Tailwind v4 (no config required) */
 @import "tailwindcss";
 
-/* 2️⃣ Tailwind layers next */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 3️⃣ Custom styles */
-body {
-    font-family: 'JetBrains Mono', monospace;
+/* 3️⃣ Custom CSS */
+:root {
+    --font-mono: "JetBrains Mono", monospace;
+    --color-background: #09090b;
+    --color-foreground: #fafafa;
+    --color-muted: #27272a;
+    --color-muted-foreground: #a1a1aa;
+    --color-accent: #22d3ee;
+    --float-animation: float 6s ease-in-out infinite;
+    --card: 245 245 245;        /* Off-White/Light Gray */
 }
 
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #22d3ee;
+}
