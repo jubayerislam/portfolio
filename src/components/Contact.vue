@@ -1,10 +1,9 @@
 <template>
   <section id="contact" class="bg-[var(--color-background)] text-[var(--color-foreground)] py-20 px-4 sm:px-8 font-mono border-t border-white/10">
     <div
-        class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 relative z-10 p-6 rounded-xl bg-[var(--color-muted)]/20 border border-white/10 shadow-2xl"
-    >
+        class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 relative z-10 p-6 rounded-xl bg-[var(--color-muted)]/20 border border-white/10 ">
       <!-- Form Side -->
-      <div class="p-4 sm:p-6 bg-muted/40 rounded-xl border border-white/10">
+      <div class="p-4 sm:p-6 bg-muted/40 rounded-xl">
         <h2 class="text-3xl font-semibold mb-6 text-[var(--color-foreground)]">Just Say Hello</h2>
         <form class="space-y-6" @submit.prevent="handleSubmit">
           <!-- Form Status Message -->
@@ -24,7 +23,7 @@
                 v-model="formData.name"
                 placeholder="Md. Jubayer Islam"
                 required
-                class="w-full bg-muted/80 text-[var(--color-foreground)] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-white/10 transition-colors"
+                class="w-full bg-[var(--color-input-bg)]/80 text-[var(--color-foreground)] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-white/10 transition-colors"
             >
           </div>
 
@@ -37,7 +36,7 @@
                 v-model="formData.email"
                 placeholder="you@example.com"
                 required
-                class="w-full bg-muted/80 text-[var(--color-foreground)] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-white/10 transition-colors"
+                class="w-full bg-[var(--color-input-bg)]/80 text-[var(--color-foreground)] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-white/10 transition-colors"
             >
           </div>
 
@@ -50,7 +49,7 @@
                 v-model="formData.subject"
                 placeholder="Question about your services"
                 required
-                class="w-full bg-muted/80 text-[var(--color-foreground)] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-white/10 transition-colors"
+                class="w-full bg-[var(--color-input-bg)]/80 text-[var(--color-foreground)] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-white/10 transition-colors"
             >
           </div>
 
@@ -63,7 +62,7 @@
                 placeholder="Your message..."
                 rows="4"
                 required
-                class="w-full bg-muted/80 text-[var(--color-foreground)] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-white/10 transition-colors"
+                class="w-full bg-[var(--color-input-bg)]/80 text-[var(--color-foreground)] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-white/10 transition-colors"
             >
                             </textarea>
           </div>
@@ -98,7 +97,7 @@
           </div>
 
           <!-- Phone -->
-          <div class="flex items-start gap-4 p-4 bg-muted/30 rounded-lg border border-white/10">
+          <div class="flex items-start gap-4 p-4 bg-[var(--color-muted-foreground)]/3 rounded-lg border border-white/10">
                             <span class="flex items-center justify-center w-10 h-10 bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] flex-shrink-0">
                                 <i class="fa-solid fa-phone text-lg"></i>
                             </span>
@@ -109,7 +108,7 @@
           </div>
 
           <!-- Address -->
-          <div class="flex items-start gap-4 p-4 bg-muted/30 rounded-lg border border-white/10">
+          <div class="flex items-start gap-4 p-4 bg-[var(--color-muted-foreground)]/3 rounded-lg border border-white/10">
                             <span class="flex items-center justify-center w-10 h-10 bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] flex-shrink-0">
                                 <i class="fa-solid fa-location-dot text-lg"></i>
                             </span>
@@ -127,27 +126,27 @@
             <a
                 href="#"
                 aria-label="Visit my Dribbble profile"
-                class="flex items-center justify-center w-10 h-10 rounded-full bg-muted/80 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10">
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10">
               <i class="fab fa-dribbble text-lg"></i>
             </a>
             <a
                 href="#"
                 aria-label="Visit my Behance profile"
-                class="flex items-center justify-center w-10 h-10 rounded-full bg-muted/80 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10"
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10"
             >
               <i class="fab fa-behance text-lg"></i>
             </a>
             <a
                 href="#"
                 aria-label="Visit my Twitter profile"
-                class="flex items-center justify-center w-10 h-10 rounded-full bg-muted/80 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10"
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10"
             >
               <i class="fab fa-twitter text-lg"></i>
             </a>
             <a
                 href="#"
                 aria-label="Visit my LinkedIn profile"
-                class="flex items-center justify-center w-10 h-10 rounded-full bg-muted/80 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10"
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10"
             >
               <i class="fab fa-linkedin text-lg"></i>
             </a>

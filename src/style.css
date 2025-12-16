@@ -4,16 +4,69 @@
 /* 2️⃣ Import Tailwind v4 (no config required) */
 @import "tailwindcss";
 
-/* 3️⃣ Custom CSS */
+
+/* Light Theme */
 :root {
     --font-mono: "JetBrains Mono", monospace;
+    --float-animation: float 6s ease-in-out infinite;
+    --card: 245 245 245;
+
+    --color-background: #f9fafb;
+    --color-foreground: #111827;
+
+    --color-accent: #111827;
+    --color-accent-foreground: #111827;
+
+    --color-button-text: #111827;
+    --color-button-accent: #f9fafb;
+
+    --color-card-text: #111827;
+    --color-card-accent: #fff;
+    --color-card-muted: #fff;
+    --color-card-border: #fff;
+
+    --color-muted: #e5e7eb;
+    --color-muted-foreground: #111827;
+    --color-input-bg: #fff;
+
+    --color-project-btn-bg: #eeeeee;
+
+    --color-tech-bg: #808080;
+
+    --text-gray-600: #4a5565;
+    --color-tech-border: #fff;
+
+
+
+    --color-border: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
     --color-background: #09090b;
     --color-foreground: #fafafa;
+
+    --color-accent: #22d3ee;
+    --color-accent-foreground: #000000;
+
+    --color-button-text: #09090b;
+    --color-button-accent: #22d3ee;
+
+    --color-card-text: #22d3ee;
+    --color-card-accent: #22d3ee;
+    --color-card-muted: #27272a;
+    --color-card-border: #22d3ee;
+
     --color-muted: #27272a;
     --color-muted-foreground: #a1a1aa;
-    --color-accent: #22d3ee;
-    --float-animation: float 6s ease-in-out infinite;
-    --card: 245 245 245;        /* Off-White/Light Gray */
+
+    --color-input-bg: #00000000;
+    --color-project-btn-bg: #00000000;
+
+    --color-tech-bg: #22d3ee;
+    --color-tech-border: #22d3ee;
+
+    --color-border: rgba(255, 255, 255, 0.1);
 }
 
 @keyframes float {
@@ -21,17 +74,30 @@
     50% { transform: translateY(-20px); }
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
+.custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
 }
-::-webkit-scrollbar-track {
-    background: #09090b;
+
+.custom-scrollbar::-webkit-scrollbar-button {
+    display: none;
 }
-::-webkit-scrollbar-thumb {
-    background: #27272a;
-    border-radius: 4px;
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover {
-    background: #22d3ee;
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #374151;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #4b5563;
+}
+
+.custom-scrollbar {
+    scrollbar-color: #374151 transparent;
+    scrollbar-width: thin;
 }

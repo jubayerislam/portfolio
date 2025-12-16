@@ -2,15 +2,18 @@
 
   <section class="min-h-[calc(100vh-5rem)] flex items-center justify-center py-12
   bg-gradient-to-b
-from-[var(--color-background)] to-[var(--color-background)]
+
   text-[var(--color-foreground)] px-4 sm:px-8 font-mono relative overflow-hidden">
 
 
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.06)_0%,transparent_70%)]"></div>
+    <!-- Background Glow -->
+
 
     <div class="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 lg:gap-16 relative z-10">
 
+      <!-- LEFT SIDE -->
       <div class="text-center md:text-left space-y-6 md:flex-1 md:w-[70%]">
+
         <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight leading-[1.1]">
           Md. <span class="text-[var(--color-accent)]">Jubayer Islam</span>
         </h1>
@@ -23,40 +26,54 @@ from-[var(--color-background)] to-[var(--color-background)]
           I build fast, scalable, and visually beautiful web experiences — transforming ideas into products that deliver impact.
         </p>
 
+        <!-- BUTTONS -->
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start pt-6">
-          <button class="px-8 py-3 bg-[var(--color-accent)] text-[var(--color-background)] rounded-lg font-medium
-                hover:scale-[1.03] hover:shadow-[var(--color-accent)]/30 shadow-sm
-                transition-all duration-300 cursor-pointer">
+
+          <button class="px-8 py-3 bg-[var(--color-button-accent)] text-[var(--color-button-text)] rounded-lg font-medium hover:scale-[1.03] shadow-sm transition-all duration-300 cursor-pointer">
             View My Work
           </button>
-          <button class="px-8 py-3 border border-[var(--color-accent)]/30 rounded-lg font-medium
-                hover:bg-[var(--color-accent)]/10 transition-all duration-300 cursor-pointer">
+
+
+          <button class="px-8 py-3 border border-accent/30 rounded-lg font-medium hover:bg-accent/10 transition-all duration-300 cursor-pointer">
             Get In Touch
           </button>
+
         </div>
 
+        <!-- STATS -->
         <div class="grid grid-cols-3 gap-6 text-center md:text-left pt-8 md:pt-12">
           <div>
-            <div class="text-3xl sm:text-4xl font-bold text-[var(--color-accent)] mb-1">50+</div>
-            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] uppercase tracking-wide">Projects Completed</p>
+            <div class="text-3xl sm:text-4xl font-bold text-[var(--color-accent)] mb-1">10+</div>
+            <p class="text-xs sm:text-sm text-[var(--color-muted-foreground)] uppercase tracking-wide">Projects Completed</p>
           </div>
+
           <div>
-            <div class="text-3xl sm:text-4xl font-bold text-[var(--color-accent)] mb-1">8 yrs</div>
-            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] uppercase tracking-wide">Experience</p>
+            <div class="text-3xl sm:text-4xl font-bold text-[var(--color-accent)] mb-1">4 yrs</div>
+            <p class="text-xs sm:text-sm text-[var(--color-muted-foreground)] uppercase tracking-wide">Experience</p>
           </div>
+
           <div>
             <div class="text-3xl sm:text-4xl font-bold text-[var(--color-accent)] mb-1">30+</div>
-            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] uppercase tracking-wide">Happy Clients</p>
+            <p class="text-xs sm:text-sm text-[var(--color-muted-foreground)] uppercase tracking-wide">Happy Clients</p>
           </div>
         </div>
+
       </div>
 
+      <!-- RIGHT SIDE IMAGE -->
       <div class="flex justify-center md:justify-end md:w-[30%]">
-        <div class="relative w-64 sm:w-72 md:w-80 lg:w-96 aspect-square rounded-full
-          bg-gradient-to-tr from-[var(--color-accent)]/30 to-[var(--color-accent)]/10
-          border border-[var(--color-accent)]/20 flex items-center justify-center
-          overflow-hidden shadow-lg shadow-[var(--accent)]/10 animate-float">
-          <img :src="profileImage" alt="Jubayer Islam" class="w-full h-full rounded-full object-cover transform hover:scale-105 transition-transform duration-500" />
+        <div
+            class="relative w-64 sm:w-72 md:w-80 lg:w-96 aspect-square rounded-full
+               bg-gradient-to-tr from-[var(--color-accent)]/30 to-[var(--color-accent)]/10
+               border border-[var(--color-accent)]/20 flex items-center justify-center
+               overflow-hidden shadow-lg shadow-[var(--color-accent)]/10 animate-float">
+
+          <img
+              :src="profileImage"
+              alt="Jubayer Islam"
+              class="w-full h-full rounded-full object-cover
+                 transform hover:scale-105 transition-transform duration-500"/>
+
           <div class="absolute inset-0 rounded-full bg-[var(--color-accent)]/10 blur-3xl animate-pulse opacity-60"></div>
         </div>
       </div>

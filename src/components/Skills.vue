@@ -13,7 +13,8 @@
       </div>
 
       <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 sm:gap-6">
-        <div v-for="skill in skills" :key="skill.name" class="flex flex-col items-center justify-center bg-[var(--color-accent)]/10 rounded-xl p-4 sm:p-6 hover:bg-[var(--color-accent)]/20 hover:scale-[1.03] transition-transform duration-300 shadow-lg border border-[var(--color-accent)]/20 cursor-pointer">
+        <div v-for="skill in skills" :key="skill.name"
+             class="flex flex-col items-center justify-center bg-[var(--color-card-accent)]/10 rounded-xl p-4 sm:p-6 hover:bg-[var(--color-card-accent)]/20 hover:scale-[1.05] transition-transform duration-300 shadow-sm border border-[var(--color-card-border)]/20 cursor-pointer">
           <img :src="skill.icon" :alt="skill.name" class="w-10 h-10 sm:w-12 sm:h-12 mb-2"/>
           <span class="text-sm font-medium text-foreground text-center mt-2">{{ skill.name }}</span>
         </div>

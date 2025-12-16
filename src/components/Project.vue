@@ -1,7 +1,7 @@
 <template>
   <!-- PORTFOLIO SECTION -->
   <section id="work" class="py-20 px-4 sm:px-8 lg:px-12 bg-[var(--color-background)] border-t border-white/10">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <!-- Section Header -->
       <div class="mb-16 text-center">
         <h2 class="text-4xl font-mono sm:text-5xl font-bold text-[var(--color-foreground)] mb-4">Portfolio Highlights</h2>
@@ -16,15 +16,9 @@
             v-for="tag in filterTags"
             :key="tag"
             @click="selectedTag = selectedTag === tag ? null : tag"
-            :class="[
-                            'px-5 py-2 rounded-xl font-medium transition-all duration-300 text-sm border cursor-pointer',
-                          selectedTag === tag
-    ? 'bg-[var(--color-accent)] text-[var(--color-background)] shadow-[0_1px_2px_var(--color-accent)] border-[var(--color-accent)]'
-    : 'bg-muted/30 text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted-foreground)]/10 border-white/10'
-
-
-                        ]"
-        >
+            :class="['px-5 py-2 rounded-lg font-medium transition-all duration-300 text-sm border cursor-pointer', selectedTag === tag
+                    ? 'bg-[var(--color-card-accent)] text-[var(--color-button-text)] shadow-[0_1px_2px_var(--color-muted)] border-[var(--color-card-accent)]'
+                    : 'bg-[var(--color-project-btn-bg)]/30 text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted-foreground)]/10 border-white/10']">
           {{ tag }}
         </button>
       </div>
@@ -35,7 +29,7 @@
             v-for="project in filteredProjects"
             :key="project.id"
             @click="openModal(project)"
-            class="group cursor-pointer p-5 bg-[var(--color-muted)]/20 rounded-xl border border-white/10 shadow-lg hover:shadow-[0_4px_16px_var(--color-accent)]/30
+            class="group cursor-pointer p-5 bg-[var(--color-muted)]/20 rounded-xl border border-white/10 shadow-sm hover:shadow-[0_4px_8px_var(--color-accent)]/30
             transition-all duration-500 transform hover:-translate-y-2">
           <!-- Project Image/Preview -->
           <div
@@ -68,7 +62,8 @@
                                 <span
                                     v-for="tech in project.tech"
                                     :key="tech"
-                                    class="px-3 py-1 text-xs font-medium text-[var(--color-accent)] bg-[var(--color-accent)]/10 rounded-full border border-[var(--color-accent)]/20">
+                                    class="px-3 py-1 text-xs font-medium text-[var(--color-accent)] bg-[var(--color-tech-bg)]/10 rounded-full border border-[var(--color-tech-border)]/20">
+
                                     {{ tech }}
                                 </span>
             </div>
@@ -79,9 +74,11 @@
 
     <!-- Project Modal -->
     <transition name="modal-fade">
-      <div v-if="isModalOpen" class="fixed inset-0 bg-background/90 backdrop-blur-xl flex items-center justify-center p-4 z-50">
+      <div v-if="isModalOpen" class="fixed inset-0 bg-background/90 backdrop-blur-xl flex items-center justify-center p-4 z-50 ">
+
+
         <div
-            class="relative bg-background/95 border border-white/10 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto ring-1 ring-accent/10"
+            class="relative bg-background/95 border border-white/10 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto ring-1 ring-accent/10 custom-scrollbar"
             @click.stop
         >
           <!-- Close Button -->
@@ -131,27 +128,6 @@
                 <p class="text-muted-foreground leading-relaxed">
                   Built a modular architecture using Vue 3, Node.js, and Redis caching to deliver a smooth and optimized UX.
                 </p>
-              </div>
-            </section>
-
-            <!-- Results -->
-            <section class="bg-muted/40 backdrop-blur-sm rounded-2xl p-8 sm:p-10 mb-12 border border-white/10">
-              <h3 class="text-sm uppercase tracking-widest text-accent mb-6 font-semibold">
-                Results
-              </h3>
-              <div class="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div class="text-3xl font-bold text-accent mb-1">+60%</div>
-                  <p class="text-sm text-muted-foreground">Performance Gain</p>
-                </div>
-                <div>
-                  <div class="text-3xl font-bold text-accent mb-1">99.9%</div>
-                  <p class="text-sm text-muted-foreground">Uptime</p>
-                </div>
-                <div>
-                  <div class="text-3xl font-bold text-accent mb-1">10K+</div>
-                  <p class="text-sm text-muted-foreground">Active Users</p>
-                </div>
               </div>
             </section>
 

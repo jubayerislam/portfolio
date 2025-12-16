@@ -1,8 +1,7 @@
 <template>
   <section
       class="min-h-screen py-20 sm:py-24 bg-gradient-to-b from-background via-background/95 to-background
-         text-foreground flex items-center justify-center px-4 sm:px-8 font-mono relative overflow-hidden"
-  >
+         text-foreground flex items-center justify-center px-4 sm:px-8 font-mono relative overflow-hidden">
     <!-- Background Glow -->
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(120,119,198,0.06)_0%,transparent_70%)]"></div>
 
