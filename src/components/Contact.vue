@@ -1,5 +1,6 @@
 <template>
-  <section id="contact" class="bg-[var(--color-background)] text-[var(--color-foreground)] py-20 px-4 sm:px-8 font-mono border-t border-white/10">
+  <section id="contact"
+           class="bg-[var(--color-background)] text-[var(--color-foreground)] py-20 px-4 sm:px-8 font-mono border-t border-white/10">
     <div
         class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 relative z-10 p-6 rounded-xl bg-[var(--color-muted)]/20 border border-white/10 ">
       <!-- Form Side -->
@@ -16,7 +17,8 @@
 
           <!-- Name Input -->
           <div>
-            <label for="name" class="block text-sm font-medium text-[var(--color-muted-foreground)] mb-2">Your Name</label>
+            <label for="name" class="block text-sm font-medium text-[var(--color-muted-foreground)] mb-2">Your
+              Name</label>
             <input
                 type="text"
                 id="name"
@@ -29,7 +31,8 @@
 
           <!-- Email Input -->
           <div>
-            <label for="email" class="block text-sm font-medium text-[var(--color-muted-foreground)] mb-2">Your Email</label>
+            <label for="email" class="block text-sm font-medium text-[var(--color-muted-foreground)] mb-2">Your
+              Email</label>
             <input
                 type="email"
                 id="email"
@@ -42,7 +45,8 @@
 
           <!-- Subject Input -->
           <div>
-            <label for="subject" class="block text-sm font-medium text-[var(--color-muted-foreground)] mb-2">Subject</label>
+            <label for="subject"
+                   class="block text-sm font-medium text-[var(--color-muted-foreground)] mb-2">Subject</label>
             <input
                 type="text"
                 id="subject"
@@ -55,7 +59,8 @@
 
           <!-- Message Input -->
           <div>
-            <label for="message" class="block text-sm font-medium text-[var(--color-muted-foreground)] mb-2">Your Message</label>
+            <label for="message" class="block text-sm font-medium text-[var(--color-muted-foreground)] mb-2">Your
+              Message</label>
             <textarea
                 id="message"
                 v-model="formData.message"
@@ -81,13 +86,16 @@
       <div class="space-y-8 p-4 sm:p-6">
         <h2 class="text-3xl font-semibold mb-4 text-foreground">Contact Info</h2>
         <p class="text-[var(--color-muted-foreground)] leading-relaxed">
-          We’re here to help and answer any questions you might have. Reach out to us, and we’ll respond as quickly as possible.
+          We’re here to help and answer any questions you might have. Reach out to us, and we’ll respond as quickly as
+          possible.
         </p>
 
         <div class="space-y-5">
           <!-- Email -->
-          <div class="flex items-start gap-4 p-4 bg-[var(--color-muted-foreground)]/3 rounded-lg border border-white/10">
-                            <span class="flex items-center justify-center w-10 h-10 bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] flex-shrink-0">
+          <div
+              class="flex items-start gap-4 p-4 bg-[var(--color-muted-foreground)]/3 rounded-lg border border-white/10">
+                            <span
+                                class="flex items-center justify-center w-10 h-10 bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] flex-shrink-0">
                                 <i class="fa-solid fa-envelope text-lg"></i>
                             </span>
             <div>
@@ -97,8 +105,10 @@
           </div>
 
           <!-- Phone -->
-          <div class="flex items-start gap-4 p-4 bg-[var(--color-muted-foreground)]/3 rounded-lg border border-white/10">
-                            <span class="flex items-center justify-center w-10 h-10 bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] flex-shrink-0">
+          <div
+              class="flex items-start gap-4 p-4 bg-[var(--color-muted-foreground)]/3 rounded-lg border border-white/10">
+                            <span
+                                class="flex items-center justify-center w-10 h-10 bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] flex-shrink-0">
                                 <i class="fa-solid fa-phone text-lg"></i>
                             </span>
             <div>
@@ -108,8 +118,10 @@
           </div>
 
           <!-- Address -->
-          <div class="flex items-start gap-4 p-4 bg-[var(--color-muted-foreground)]/3 rounded-lg border border-white/10">
-                            <span class="flex items-center justify-center w-10 h-10 bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] flex-shrink-0">
+          <div
+              class="flex items-start gap-4 p-4 bg-[var(--color-muted-foreground)]/3 rounded-lg border border-white/10">
+                            <span
+                                class="flex items-center justify-center w-10 h-10 bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] flex-shrink-0">
                                 <i class="fa-solid fa-location-dot text-lg"></i>
                             </span>
             <div>
@@ -146,8 +158,7 @@
             <a
                 href="#"
                 aria-label="Visit my LinkedIn profile"
-                class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10"
-            >
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10">
               <i class="fab fa-linkedin text-lg"></i>
             </a>
           </div>
@@ -158,42 +169,36 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import {ref} from 'vue';
 
-// --- Contact Form Logic (New) ---
 const formData = ref({
   name: '',
   email: '',
   subject: '',
   message: '',
   submitting: false,
-  formStatus: { message: '', type: '' } // type: 'success' or 'error'
+  formStatus: {message: '', type: ''}
 });
 
 const handleSubmit = async () => {
   formData.value.submitting = true;
-  formData.value.formStatus = { message: '', type: '' };
+  formData.value.formStatus = {message: '', type: ''};
 
-  // --- SIMULATE API CALL (Replace with real backend call) ---
   try {
-    // Simulate network delay
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    // Success scenario
-    console.log('Form Submitted:', { ...formData.value });
+    console.log('Form Submitted:', {...formData.value});
     formData.value.formStatus = {
       message: 'Thank you! Your message has been sent successfully.',
       type: 'success'
     };
 
-    // Reset form fields
     formData.value.name = '';
     formData.value.email = '';
     formData.value.subject = '';
     formData.value.message = '';
 
   } catch (error) {
-    // Error scenario
     console.error('Form submission error:', error);
     formData.value.formStatus = {
       message: 'Oops! Something went wrong. Please try again.',
@@ -201,12 +206,10 @@ const handleSubmit = async () => {
     };
   } finally {
     formData.value.submitting = false;
-    // Clear status message after a few seconds
     setTimeout(() => {
-      formData.value.formStatus = { message: '', type: '' };
+      formData.value.formStatus = {message: '', type: ''};
     }, 5000);
   }
 };
-// --- End Contact Form Logic ---
 
 </script>

@@ -1,12 +1,14 @@
 <template>
   <header
-      class="sticky top-0 z-50 border-b border-white/10
-           bg-gradient-to-r from-[var(--color-background)]/5
-           via-[var(--color-background)]
-           to-[var(--color-background)]
-           backdrop-blur-md font-mono">
+      class="fixed top-0 left-0 w-full z-50
+         border-b border-white/10
+         bg-gradient-to-r from-[var(--color-background)]/5
+         via-[var(--color-background)]
+         to-[var(--color-background)]
+         backdrop-blur-md font-mono">
 
-    <div class="max-w-7xl mx-auto flex items-center justify-between h-20 px-6 sm:px-8 lg:px-12">
+
+  <div class="max-w-7xl mx-auto flex items-center justify-between h-20 px-6 sm:px-8 lg:px-12">
 
       <!-- Logo -->
       <div class="flex items-center gap-3 group cursor-pointer">

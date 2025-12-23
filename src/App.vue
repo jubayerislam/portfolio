@@ -1,32 +1,53 @@
 <template>
+  <Header/>
   <div>
-    <Header/>
     <main>
-      <Hero />
-      <About />
-      <Skills />
-      <Resume />
-      <Project />
-      <Project2 />
-      <Contact />
-      <Footer />
+      <Hero/>
+      <About/>
+      <Skills/>
+      <Resume/>
+      <Project/>
+      <Contact/>
+      <Footer/>
     </main>
   </div>
 </template>
+
 
 <script setup>
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
 import About from './components/About.vue'
 import Project from './components/Project.vue'
-import Project2 from './components/Project2.vue'
 import Skills from './components/Skills.vue'
 import Resume from './components/Resume.vue'
 import Contact from './components/Contact.vue'
-import Contact2 from './components/Contact2.vue'
 import Footer from './components/Footer.vue'
 
-import Header2 from './components/Header2.vue'
-import Resume2 from './components/Resume2.vue'
+import Lenis from 'lenis'
+import {onMounted, onBeforeUnmount} from 'vue'
+
+let lenis;
+let rafId;
+
+onMounted(() => {
+  lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Better easing function
+    smoothWheel: true,
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    rafId = requestAnimationFrame(raf)
+  }
+
+  rafId = requestAnimationFrame(raf)
+})
+
+onBeforeUnmount(() => {
+  if (lenis) lenis.destroy()
+  cancelAnimationFrame(rafId)
+})
 
 </script>

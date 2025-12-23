@@ -1,5 +1,6 @@
 <template>
-  <section id="resume" class="bg-[var(--color-background)] text-[var(--color-foreground)] py-20 sm:py-32 px-4 sm:px-8 font-mono border-t border-white/10">
+  <section id="resume"
+           class="bg-[var(--color-background)] text-[var(--color-foreground)] py-20 sm:py-32 px-4 sm:px-8 font-mono border-t border-white/10">
     <div class="max-w-6xl mx-auto">
 
       <!-- Section Header -->
@@ -24,28 +25,40 @@
             <div class="border-l-2 border-[var(--color-accent)] pl-6 relative">
               <span class="absolute -left-[6px] top-1 w-3 h-3"></span>
 
-              <h4 class="font-bold text-xl">Senior Full-Stack Developer</h4>
-              <p class="text-[var(--color-muted-foreground)] text-sm italic">Tech Company Inc. — 2020 • Present</p>
+              <h4 class="font-bold text-xl">Full-Stack Developer</h4>
+              <p class="text-[var(--color-muted-foreground)] text-sm italic">Bug Finder Ltd. — 1 September, 2022 •
+                Present</p>
 
               <p class="text-[var(--color-muted-foreground)]/90 mt-3 leading-relaxed text-base">
-                Lead developer responsible for architecting scalable web apps using Vue.js, Node.js,
-                TailwindCSS, and Laravel. Managed a team of 4 developers to deliver large-scale projects.
+                Built scalable, high-performance web applications using Vue.js, JavaScript, PHP, and Laravel,
+                emphasizing clean architecture and code quality.
               </p>
             </div>
 
-            <!-- Item -->
             <div class="border-l-2 border-[var(--color-accent)] pl-6 relative">
               <span class="absolute -left-[6px] top-1 w-3 h-3"></span>
 
-              <h4 class="font-bold text-xl">Full-Stack Developer</h4>
-              <p class="text-[var(--color-muted-foreground)] text-sm italic">Web Solutions Ltd. — 2016 • 2020</p>
+              <h4 class="font-bold text-xl">Data Entry & WordPress Theme Specialist</h4>
+              <p class="text-[var(--color-muted-foreground)] text-sm italic">Khalid IT — 01 October, 2020 - 05 March,
+                2021</p>
 
               <p class="text-[var(--color-muted-foreground)]/90 mt-3 leading-relaxed text-base">
-                Built custom web applications and internal tools while collaborating closely with UI/UX
-                teams and project managers to streamline development workflows.
+                It clearly highlights both your data entry and theme customization work, making it professional and
+                precise.
               </p>
             </div>
 
+            <div class="border-l-2 border-[var(--color-accent)] pl-6 relative">
+              <span class="absolute -left-[6px] top-1 w-3 h-3"></span>
+
+              <h4 class="font-bold text-xl">Web Design Intern</h4>
+              <p class="text-[var(--color-muted-foreground)] text-sm italic">Future Track IT (FTIT) — 2019</p>
+
+              <p class="text-[var(--color-muted-foreground)]/90 mt-3 leading-relaxed text-base">
+                Assisted in designing responsive websites using WordPress, translating design concepts into clean,
+                user-friendly interfaces that follow modern web.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -60,10 +73,26 @@
               <span class="absolute -left-[6px] top-1 w-3 h-3"></span>
 
               <h4 class="font-bold text-xl">B.Sc in Computer Science</h4>
-              <p class="text-[var(--color-muted-foreground)] text-sm italic">University Name — 2012 • 2016</p>
+              <p class="text-[var(--color-muted-foreground)] text-sm italic">Northern University Bangladesh — 2023 •
+                2026</p>
 
               <p class="text-[var(--color-muted-foreground)]/90 mt-3 leading-relaxed text-base">
-                Specialized in software engineering, data structures, algorithms, and full-stack web development.
+                Focused on software engineering fundamentals, data structures, algorithms, and modern full-stack web
+                development.
+              </p>
+            </div>
+
+            <div class="border-l-2 border-[var(--color-accent)] pl-6 relative">
+              <span class="absolute -left-[6px] top-1 w-3 h-3"></span>
+
+              <h4 class="font-bold text-xl">Diploma in Computer Technology</h4>
+              <p class="text-[var(--color-muted-foreground)] text-sm italic">Ahsanullah Institute of Technical and
+                Vocational Education and Training (AITVET)
+                — 2015 • 2019</p>
+
+              <p class="text-[var(--color-muted-foreground)]/90 mt-3 leading-relaxed text-base">
+                Gained strong foundational knowledge in computer systems, programming, database management, and web
+                technologies.
               </p>
             </div>
 
@@ -71,11 +100,11 @@
             <div class="border-l-2 border-[var(--color-accent)] pl-6 relative">
               <span class="absolute -left-[6px] top-1 w-3 h-3"></span>
 
-              <h4 class="font-bold text-xl">Professional Web Developer Certification</h4>
-              <p class="text-[var(--color-muted-foreground)] text-sm italic">Online Certification — 2018</p>
+              <h4 class="font-bold text-xl">Professional Web Developer Course</h4>
+              <p class="text-[var(--color-muted-foreground)] text-sm italic">Webcoder-IT Institute — 2022</p>
 
               <p class="text-[var(--color-muted-foreground)]/90 mt-3 leading-relaxed text-base">
-                Completed advanced courses on modern JavaScript, REST API development, and cloud deployment.
+                Completed advanced courses on modern JavaScript, REST API development, and laravel deployment.
               </p>
             </div>
 

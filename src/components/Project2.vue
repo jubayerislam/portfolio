@@ -42,7 +42,8 @@
         <div
             v-for="project in filteredProjects"
             :key="project.id"
-            @click="openModal(project)"
+            @click="$emit('openModal', project)"
+
             class="group cursor-pointer">
           <!-- Project Card -->
 
