@@ -1,6 +1,6 @@
 <template>
 
-  <section class="min-h-[calc(100vh-5rem)] flex items-center justify-center py-12
+  <section id="hero" class="min-h-[calc(100vh-5rem)] flex items-center justify-center py-12
   bg-gradient-to-b
 
   text-[var(--color-foreground)] px-4 sm:px-8 font-mono relative overflow-hidden">

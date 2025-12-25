@@ -11,7 +11,7 @@
   <div class="max-w-7xl mx-auto flex items-center justify-between h-20 px-6 sm:px-8 lg:px-12">
 
       <!-- Logo -->
-      <div class="flex items-center gap-3 group cursor-pointer">
+      <a class="flex items-center gap-3 group cursor-pointer" href="#hero">
         <div class="flex flex-col items-start -space-y-2 transition-all group-hover:scale-[1.03]">
           <span class="text-[11px] font-light tracking-[0.25em]
                        text-[var(--color-muted-foreground)] uppercase">
@@ -24,7 +24,7 @@
             Jubayer
           </span>
         </div>
-      </div>
+      </a>
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-10">
@@ -127,12 +127,9 @@ const mobileMenuOpen = ref(false)
 const theme = ref('light')
 const navItems = ['About', 'Work', 'Skills', 'Resume', 'Contact']
 
-// Load saved theme
+
 onMounted(() => {
   const saved = localStorage.getItem("light")
-
-  console.log(saved )
-
   if (saved === "dark") {
     document.documentElement.setAttribute("data-theme", "dark")
     theme.value = "dark"
@@ -150,4 +147,5 @@ const toggleTheme = () => {
     localStorage.setItem("theme", "dark")
   }
 }
+
 </script>
