@@ -125,7 +125,7 @@ import { ref, onMounted } from 'vue'
 
 const mobileMenuOpen = ref(false)
 const theme = ref('light')
-const navItems = ['About', 'Work', 'Services', 'Contact']
+const navItems = ['About', 'Work', 'Skills', 'Resume', 'Services', 'Contact']
 
 // Load saved theme
 onMounted(() => {

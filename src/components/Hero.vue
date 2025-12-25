@@ -34,9 +34,9 @@
           </button>
 
 
-          <button class="px-8 py-3 border border-accent/30 rounded-lg font-medium hover:bg-accent/10 transition-all duration-300 cursor-pointer">
-            Get In Touch
-          </button>
+          <a href="/resume/Jubayer_Islam_CV.pdf" download class="px-8 py-3 border border-accent/30 rounded-lg font-medium hover:bg-accent/10 transition-all duration-300 cursor-pointer">
+            Download CV
+          </a>
 
         </div>
 
@@ -86,9 +86,9 @@
 
 <script setup>
 
-const profileImage = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
+// const profileImage = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
 
-// const profileImage = 'img/profile.webp';
+const profileImage = 'img/jubayer-profile.png';
 
 </script>
 

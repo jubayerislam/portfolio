@@ -176,7 +176,7 @@ const projects = [
         '<p><strong>Dynamic & Flexible Architecture:</strong> Dynamic page routing, automatic currency updates via payment APIs, and text translation using Azure API.</p>\n',
     tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
     tags: ['Individual'],
-    image: "/img/projects/bugfinder.png",
+    image: "/img/projects/admin.png",
     url: "https://smm-matrix.bugfinder.app/",
 
   },
@@ -186,7 +186,12 @@ const projects = [
     category: 'Full-Stack',
     description:
         'A scalable web platform with separate admin, user, and employee panels to support operational management.',
-    projectOverview: 'A scalable, high-performance platform built with Vue 3, Node.js, and Redis caching to efficiently manage complex workflows and deliver an optimized user experience.',
+    projectOverview: '<p><strong>Admin Dashboard:</strong> A feature-rich admin panel offering user and employee management, role-based permissions, email marketing, API integrations, expense and earnings tracking, dynamic content control, Envato product management, and real-time support ticketing—optimized for scalable business operations.</p>\n' +
+        '<p><strong>Advanced Analytics & Reporting:</strong> Interactive graphs and charts for deposits, transactions, and overall system performance.</p>\n' +
+        '<p><strong>Comprehensive Payment Integration:</strong> Supports payment gateways such as Stripe.</p>\n' +
+        '<p><strong>Real-Time Systems:</strong> Support ticket management, in-app notifications using Laravel Pusher broadcasting, event listeners, and push notifications via Firebase.</p>\n' +
+        '<p><strong>User Dashboard:</strong> An intuitive user dashboard featuring plan purchase and upgrade options with detailed plan information, subscription tracking, and a real-time client support ticket system..</p>\n'+
+        '<p><strong>Employee Dashboard:</strong> A centralized dashboard that enables employees to view salary details and payment history, submit and track leave applications, and manage essential work-related information through a secure and user-friendly interface..</p>\n',
     tech: ['Vue.js', 'Inertia.js', 'PHP', 'Laravel', 'MySql', 'BootStrap', 'API', 'WebSocket'],
     tags: ['Individual'],
     image: "/img/projects/bugfinder.png",
@@ -293,7 +298,6 @@ const projects = [
     projectOverview: '<p><strong>Admin Dashboard:</strong> Manage Sales centr. customer, manage sales, services, payments, reports, and system settings with full control and analytics.</p>\n' +
         '  <p><strong>User Dashboard:</strong> Allows clients and resellers to place orders, track progress, manage wallet, view history, and update profile settings.</p>\n' +
         '  <p><strong>API Integration:</strong> Supports multiple SMM service providers, automates order fulfillment, and provides endpoints for external apps.</p>\n' +
-        '  <p><strong>Multi-Tenant Support:</strong> Enables resellers to operate independently with separate dashboards, isolated data, and flexible pricing on a shared platform.</p>\n' +
         '  <p><strong>Payment Gateway:</strong> Integrated with multiple payment gateways, including Stripe, PayPal, Binance, Cryptomus, bKash, Nagad, etc., to handle secure transactions and support multi-currency payments..</p>\n' +
         '  <p><strong>Technology:</strong> Built with a modern frontend using Vue.js (with Blade templates), a backend powered by PHP and Laravel, MySQL database, RESTful APIs, PWA support, multi-currency and multi-language capabilities, and security features like 2FA.</p>\n',
     tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
@@ -304,15 +308,15 @@ const projects = [
 
   {
     id: 10,
-    title: 'Yes Cable: Multi-Purpose Cable Service Website',
+    title: 'Healing Hub – E-Commerce Platform',
     category: 'Backend Development',
     description:
-        'A unified platform for booking car services, managing vehicle maintenance schedules, and coordinating auto repair services with real-time updates and service management tools.',
+        'A modern e-commerce platform designed to deliver seamless product browsing, cash on delivery, and efficient order management.',
     projectOverview: 'A scalable, high-performance platform built with Vue 3, Node.js, and Redis caching to efficiently manage complex workflows and deliver an optimized user experience.',
-    tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
+    tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'Meta Pixel', 'BootStrap', 'Jquery'],
     tags: ['Individual'],
-    image: "/img/bug-app.png",
-    url: "https://smm-matrix.bugfinder.app/",
+    image: "/img/projects/healing-hub.png",
+    url: "https://healinghubbd.com/",
   }
 ]
 

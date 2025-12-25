@@ -48,7 +48,7 @@ const skills = [
   {name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'},
   {
     name: 'Amazon S3',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg'
+    icon: 'img/skills/amazon-s3.png'
   },
   {name: 'WebSockets', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg'},
   {name: 'REST APIs', icon: 'https://api.iconify.design/vscode-icons/file-type-rest.svg'},

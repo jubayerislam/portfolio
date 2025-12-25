@@ -7,23 +7,23 @@
     <div class="max-w-6xl  mx-auto relative z-10 flex flex-col space-y-12">
 
       <!-- Heading -->
-      <div class="text-center md:text-left">
-        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight font-mono">
+      <div class="text-center">
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight font-mono mb-3">
           About <span class="text-[var(--color-accent)]">Me</span>
         </h2>
-        <div class="w-16 h-1 bg-[var(--color-accent)]/50 mx-auto md:mx-0 mt-3 rounded-full"></div>
+
+
+        <!-- Intro Text -->
+        <p class="text-lg sm:text-xl text-[var(--color-muted-foreground)]/90 leading-relaxed
+           mx-auto mt-4">
+          I’m Md. Jubayer Islam, a Full-Stack Developer passionate about crafting scalable and beautiful
+          web experiences. I love turning ideas into functional, user-friendly products with clean code.
+        </p>
       </div>
 
-      <!-- Intro Text -->
-      <p class="text-lg sm:text-xl text-[var(--color-muted-foreground)]/90 leading-relaxed
-              max-w-6xl mx-auto md:mx-0">
-        I’m Md. Jubayer Islam, a Full-Stack Developer passionate about crafting scalable and beautiful
-        web experiences. I love turning ideas into functional, user-friendly products with clean,
-        maintainable code.
-      </p>
 
       <!-- Highlights / Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
 
         <!-- Card Component -->
         <template v-for="item in [
@@ -32,8 +32,7 @@
         { title: 'Problem Solver', text: 'Tackling challenges efficiently with creative solutions.' },
         { title: 'APIs & Integration', text: 'Seamless integration of third-party APIs and payment gateways.' },
         { title: 'Database & Backend', text: 'Optimized database design & robust backend solutions.' },
-        { title: 'Collaboration', text: 'Working effectively with clients and teams worldwide.' }
-      ]">
+        { title: 'Collaboration', text: 'Working effectively with clients and teams worldwide.' }]">
           <div
               class="p-6 bg-[var(--color-card-muted)]/40 rounded-xl border border-[var(--color-accent)]/10
                  shadow-sm hover:shadow-[var(--color-card-accent)]/20
@@ -51,6 +50,8 @@
 
     </div>
   </section>
+
+
 
 
 </template>

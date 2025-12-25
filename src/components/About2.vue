@@ -1,48 +1,58 @@
 <template>
 
-  <section id="about" class="pt-12 pb-20 sm:pb-24 bg-background text-foreground">
+  <section id="about"
+           class="pt-20 pb-20 sm:pb-24 bg-[var(--color-background)] text-[var(--color-foreground)]
+         px-4 sm:px-8 lg:px-12 border-t border-white/10 relative overflow-hidden">
 
-    <div class="max-w-6xl mx-auto  flex flex-col space-y-12">
+    <div class="max-w-6xl  mx-auto relative z-10 flex flex-col space-y-12">
 
       <!-- Heading -->
-      <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-center md:text-left">
-        About <span class="text-accent">Me</span>
-      </h2>
+      <div class="text-center md:text-left">
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight font-mono">
+          About <span class="text-[var(--color-accent)]">Me</span>
+        </h2>
+        <div class="w-16 h-1 bg-[var(--color-accent)]/50 mx-auto md:mx-0 mt-3 rounded-full"></div>
+      </div>
 
-      <!-- Philosophy / Intro -->
-      <p class="text-lg sm:text-xl text-muted-foreground/90 leading-relaxed mx-auto md:mx-0">
-        I’m Md. Jubayer Islam, a Full-Stack Developer passionate about crafting scalable and beautiful web experiences.
-        I love turning ideas into functional, user-friendly products with clean, maintainable code.
+      <!-- Intro Text -->
+      <p class="text-lg sm:text-xl text-[var(--color-muted-foreground)]/90 leading-relaxed
+              max-w-6xl mx-auto md:mx-0">
+        I’m Md. Jubayer Islam, a Full-Stack Developer passionate about crafting scalable and beautiful
+        web experiences. I love turning ideas into functional, user-friendly products with clean,
+        maintainable code.
       </p>
 
       <!-- Highlights / Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 bg-accent/10 rounded-xl shadow-md hover:shadow-accent/20 transition-shadow duration-300">
-          <h3 class="text-xl font-bold text-accent mb-2">Clean Code</h3>
-          <p class="text-sm text-muted-foreground">Writing maintainable and efficient code that scales.</p>
-        </div>
-        <div class="p-6 bg-accent/10 rounded-xl shadow-md hover:shadow-accent/20 transition-shadow duration-300">
-          <h3 class="text-xl font-bold text-accent mb-2">UX Focused</h3>
-          <p class="text-sm text-muted-foreground">Designing interfaces that are intuitive and visually appealing.</p>
-        </div>
-        <div class="p-6 bg-accent/10 rounded-xl shadow-md hover:shadow-accent/20 transition-shadow duration-300">
-          <h3 class="text-xl font-bold text-accent mb-2">Problem Solver</h3>
-          <p class="text-sm text-muted-foreground">Tackling challenges efficiently with creative solutions.</p>
-        </div>
-        <div class="p-6 bg-accent/10 rounded-xl shadow-md hover:shadow-accent/20 transition-shadow duration-300">
-          <h3 class="text-xl font-bold text-accent mb-2">APIs & Integration</h3>
-          <p class="text-sm text-muted-foreground">Seamless integration of third-party APIs and payment gateways.</p>
-        </div>
-        <div class="p-6 bg-accent/10 rounded-xl shadow-md hover:shadow-accent/20 transition-shadow duration-300">
-          <h3 class="text-xl font-bold text-accent mb-2">Database & Backend</h3>
-          <p class="text-sm text-muted-foreground">Optimized database design & robust backend solutions.</p>
-        </div>
-        <div class="p-6 bg-accent/10 rounded-xl shadow-md hover:shadow-accent/20 transition-shadow duration-300">
-          <h3 class="text-xl font-bold text-accent mb-2">Collaboration</h3>
-          <p class="text-sm text-muted-foreground">Working effectively with clients and teams worldwide.</p>
-        </div>
+
+        <!-- Card Component -->
+        <template v-for="item in [
+        { title: 'Clean Code', text: 'Writing maintainable and efficient code that scales.' },
+        { title: 'UX Focused', text: 'Designing interfaces that are intuitive and visually appealing.' },
+        { title: 'Problem Solver', text: 'Tackling challenges efficiently with creative solutions.' },
+        { title: 'APIs & Integration', text: 'Seamless integration of third-party APIs and payment gateways.' },
+        { title: 'Database & Backend', text: 'Optimized database design & robust backend solutions.' },
+        { title: 'Collaboration', text: 'Working effectively with clients and teams worldwide.' }
+      ]">
+          <div
+              class="p-6 bg-[var(--color-card-muted)]/40 rounded-xl border border-[var(--color-accent)]/10
+                 shadow-sm hover:shadow-[var(--color-card-accent)]/20
+                 transition-all duration-300 transform hover:-translate-y-1">
+            <h3 class="text-xl font-bold text-[var(--color-card-text)] mb-2">
+              {{ item.title }}
+            </h3>
+            <p class="text-sm text-[var(--color-muted-foreground)]">
+              {{ item.text }}
+            </p>
+          </div>
+        </template>
+
       </div>
 
     </div>
   </section>
+
+
 </template>
+<script setup>
+</script>
