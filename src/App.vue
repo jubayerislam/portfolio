@@ -7,7 +7,6 @@
       <Skills/>
       <Resume/>
       <Project/>
-      <Services/>
       <Contact/>
       <Footer/>
     </main>
