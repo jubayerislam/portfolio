@@ -317,6 +317,34 @@ const projects = [
     tags: ['Individual'],
     image: "/img/projects/healing-hub.png",
     url: "https://healinghubbd.com/",
+  },
+
+  {
+    id: 11,
+    title: 'StarryHire - Freelancers, Influencers, and the Job Market',
+    category: 'Backend Development',
+    description:
+        'StarryHire is a next-generation platform that bridges freelancers, influencers, and companies through smart hiring, collaboration, and opportunity discovery.',
+    projectOverview: 'Responsible for ongoing bug fixes, feature development, frontend enhancements, and continuous client support to ensure platform stability, performance, and an improved user experience.',
+    tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
+    tags: ['Contribute'],
+    image: "/img/projects/staryhire.png",
+    url: "https://starryhire.bugfinder.app/",
+  },
+
+  {
+    id: 11,
+    title: 'Portfolio - Software Engineer Portfolio',
+    category: 'Full-Stack',
+    description:
+        'A personal software engineer portfolio showcasing projects, skills, experience, and professional background with a modern, responsive design.',
+    projectOverview:
+        'Designed and developed a modern personal portfolio using Vue 3 and Vite, featuring responsive layouts, optimized performance, dynamic content, and a clean UI to effectively present projects, technical skills, and professional experience.',
+    tech: ['HTML', 'CSS', 'Tailwind', 'JavaScript', 'Vite', 'Vue.js', 'API'],
+    tags: ['Learning'],
+    image: "/img/projects/portfolio.png",
+    url: "https://jubayerislam.vercel.app/",
+
   }
 ]
 

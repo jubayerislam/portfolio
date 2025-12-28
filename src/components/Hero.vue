@@ -64,7 +64,7 @@
 
           <img
               :src="profileImage"
-              alt="Jubayer Islam"
+              alt="Md. Jubayer Islam - Software Engineer Portfolio"
               class="w-full h-full rounded-full object-cover
                  transform hover:scale-105 transition-transform duration-500"/>
 
