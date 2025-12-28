@@ -322,8 +322,6 @@ const projects = [
 
 const filteredProjects = computed(() => {
 
-  console.log(projects.filter(p => p.tags.includes(selectedTag.value)));
-
   if (!selectedTag.value || selectedTag.value === 'All') {
     // Show only first 9 projects when "All" is selected
     return projects.slice(0, 9)

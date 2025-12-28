@@ -8,10 +8,10 @@
          backdrop-blur-md font-mono">
 
 
-  <div class="max-w-7xl mx-auto flex items-center justify-between h-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between h-20 px-6 sm:px-8 lg:px-12">
 
       <!-- Logo -->
-      <a class="flex items-center gap-3 group cursor-pointer" href="#hero">
+      <a class="flex items-center gap-3 group cursor-pointer" @click.prevent="scrollToSection('hero')">
         <div class="flex flex-col items-start -space-y-2 transition-all group-hover:scale-[1.03]">
           <span class="text-[11px] font-light tracking-[0.25em]
                        text-[var(--color-muted-foreground)] uppercase">
@@ -28,10 +28,8 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-10">
-        <a
-            v-for="item in navItems"
-            :key="item"
-            :href="`#${item.toLowerCase()}`"
+        <a v-for="item in navItems" :key="item"
+            :href="`#${item.toLowerCase()}`" @click.prevent="scrollToSection(item.toLowerCase())"
             class="relative text-sm text-[var(--color-muted-foreground)]
                  hover:text-[var(--color-accent)] transition-colors duration-300
                  after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px]
@@ -41,7 +39,6 @@
         </a>
       </nav>
 
-      <!-- CTA + Mobile Toggle + Theme Toggle -->
       <div class="flex items-center gap-4">
         <button class="px-4 py-2 bg-[var(--color-button-accent)] text-sm font-medium text-[var(--color-button-text)] rounded-lg font-medium
                 hover:scale-[1.03] shadow-sm
@@ -50,17 +47,17 @@
         </button>
 
         <!-- Theme Toggle -->
-        <button
-            @click="toggleTheme"
-            class="p-2 rounded-lg hover:bg-[var(--color-muted)] transition">
-          <svg v-if="theme !== 'dark'" class="w-5 h-5 text-[var(--color-foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button @click="toggleTheme" class="p-2 rounded-lg hover:bg-[var(--color-muted)] transition">
+          <svg v-if="theme !== 'dark'" class="w-5 h-5 text-[var(--color-foreground)]" fill="none" stroke="currentColor"
+               viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 3v1m0 16v1m8.66-9H21M3 12H2m15.364-7.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 6a6 6 0 100 12 6 6 0 000-12z" />
+                  d="M12 3v1m0 16v1m8.66-9H21M3 12H2m15.364-7.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 6a6 6 0 100 12 6 6 0 000-12z"/>
           </svg>
 
-          <svg v-else class="w-5 h-5 text-[var(--color-foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg v-else class="w-5 h-5 text-[var(--color-foreground)]" fill="none" stroke="currentColor"
+               viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                  d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
           </svg>
         </button>
 
@@ -93,12 +90,10 @@
                px-6 py-4 font-mono">
         <div class="flex flex-col gap-3">
 
-          <a
-              v-for="item in navItems"
-              :key="item"
-              :href="`#${item.toLowerCase()}`"
-              @click="mobileMenuOpen = false"
-              class="text-sm font-light text-[var(--color-muted-foreground)]
+          <a v-for="item in navItems" :key="item"
+             :href="`#${item.toLowerCase()}`" @click.prevent="scrollToSection(item.toLowerCase())"
+             @click="mobileMenuOpen = false"
+             class="text-sm font-light text-[var(--color-muted-foreground)]
                    hover:text-[var(--color-accent)] transition-colors py-2">
             {{ item }}
           </a>
@@ -121,19 +116,37 @@
 
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+
+
+import {onMounted, ref} from 'vue'
+import Lenis from 'lenis'
 
 const mobileMenuOpen = ref(false)
 const theme = ref('light')
 const navItems = ['About', 'Work', 'Skills', 'Resume', 'Contact']
 
+let lenis: Lenis | null = null
 
 onMounted(() => {
-  const saved = localStorage.getItem("light")
+
+  const saved = localStorage.getItem("theme")
   if (saved === "dark") {
     document.documentElement.setAttribute("data-theme", "dark")
     theme.value = "dark"
   }
+
+  // Initialize Lenis for smooth scrolling
+  lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  })
+
+  const raf = (time: number) => {
+    lenis?.raf(time)
+    requestAnimationFrame(raf)
+  }
+  requestAnimationFrame(raf)
 })
 
 const toggleTheme = () => {
@@ -147,5 +160,18 @@ const toggleTheme = () => {
     localStorage.setItem("theme", "dark")
   }
 }
+
+function scrollToSection(id: string) {
+  if (!lenis) return
+  const target = document.getElementById(id)
+  if (target) {
+    lenis.scrollTo(target, {
+      offset: 0, // Adjust if you have a fixed header
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    })
+  }
+}
+
 
 </script>

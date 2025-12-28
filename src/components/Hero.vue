@@ -1,13 +1,8 @@
 <template>
 
-  <section id="hero" class="min-h-[calc(100vh-5rem)] flex items-center justify-center py-12
-  bg-gradient-to-b
-
-  text-[var(--color-foreground)] px-4 sm:px-8 font-mono relative overflow-hidden">
-
-
-    <!-- Background Glow -->
-
+  <section id="hero"
+           class="pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-48 lg:pb-32 flex items-center justify-center
+                bg-gradient-to-b text-[var(--color-foreground)] px-4 sm:px-8 font-mono relative overflow-hidden">
 
     <div class="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 lg:gap-16 relative z-10">
 
@@ -19,32 +14,31 @@
         </h1>
 
         <p class="text-xl text-[var(--color-muted-foreground)]/90 font-light">
-          Full-Stack Developer & Creative Engineer
+          Creative Technologist & Software Engineer
         </p>
 
         <p class="text-base sm:text-lg text-[var(--color-muted-foreground)]/70 max-w-lg leading-relaxed mx-auto md:mx-0">
-          I build fast, scalable, and visually beautiful web experiences — transforming ideas into products that deliver impact.
+          Architect of high-performance, visually clean, stunning web experiences that deliver results.
         </p>
 
-        <!-- BUTTONS -->
-        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start pt-6">
 
-          <button class="px-8 py-3 bg-[var(--color-button-accent)] text-[var(--color-button-text)] rounded-lg font-medium hover:scale-[1.03] shadow-sm transition-all duration-300 cursor-pointer">
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start pt-6">
+          <button @click.prevent="scrollToSection('work')"
+              class="px-8 py-3 bg-[var(--color-button-accent)] text-[var(--color-button-text)] rounded-lg font-medium hover:scale-[1.03] shadow-sm transition-all duration-300 cursor-pointer">
             View My Work
           </button>
-
-
-          <a href="/resume/Jubayer_Islam_CV.pdf" download class="px-8 py-3 border border-accent/30 rounded-lg font-medium hover:bg-accent/10 transition-all duration-300 cursor-pointer">
+          <a href="/resume/Jubayer_Islam_CV.pdf" download
+             class="px-8 py-3 border border-accent/30 rounded-lg font-medium hover:bg-accent/10 transition-all duration-300 cursor-pointer">
             Download CV
           </a>
-
         </div>
 
         <!-- STATS -->
         <div class="grid grid-cols-3 gap-6 text-center md:text-left pt-8 md:pt-12">
           <div>
             <div class="text-3xl sm:text-4xl font-bold text-[var(--color-accent)] mb-1">10+</div>
-            <p class="text-xs sm:text-sm text-[var(--color-muted-foreground)] uppercase tracking-wide">Projects Completed</p>
+            <p class="text-xs sm:text-sm text-[var(--color-muted-foreground)] uppercase tracking-wide">Projects
+              Completed</p>
           </div>
 
           <div>
@@ -74,7 +68,8 @@
               class="w-full h-full rounded-full object-cover
                  transform hover:scale-105 transition-transform duration-500"/>
 
-          <div class="absolute inset-0 rounded-full bg-[var(--color-accent)]/10 blur-3xl animate-pulse opacity-60"></div>
+          <div
+              class="absolute inset-0 rounded-full bg-[var(--color-accent)]/10 blur-3xl animate-pulse opacity-60"></div>
         </div>
       </div>
 
@@ -85,15 +80,59 @@
 
 
 <script setup>
+import { onMounted, onUnmounted, ref } from 'vue'
+import Lenis from 'lenis'
 
-// const profileImage = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
+const profileImage = 'img/jubayer-profile.png'
 
-const profileImage = 'img/jubayer-profile.png';
+// Use ref to make lenis reactive
+const lenis = ref(null)
 
+// Initialize Lenis
+const initLenis = () => {
+  lenis.value = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+  })
+
+  function raf(time) {
+    lenis.value?.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+}
+
+// Scroll function
+function scrollToSection(id) {
+  if (!lenis.value) {
+    console.error('Lenis is not initialized')
+    return
+  }
+
+  const target = document.getElementById(id)
+  if (target) {
+    lenis.value.scrollTo(target, {
+      offset: 0,
+      duration: 1.2,
+    })
+  }
+}
+
+// Lifecycle hooks
+onMounted(() => {
+  initLenis()
+})
+
+onUnmounted(() => {
+  if (lenis.value) {
+    lenis.value.destroy()
+  }
+})
 </script>
 
 <style scoped>
-
 
 @keyframes fadeIn {
   0% {
@@ -107,23 +146,35 @@ const profileImage = 'img/jubayer-profile.png';
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
 
-
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.animate-fadeUp { animation: fadeUp 0.8s ease-out forwards; }
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s ease-out forwards;
+}
 
 </style>

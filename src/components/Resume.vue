@@ -5,7 +5,7 @@
 
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
           My Professional <span class="text-[var(--color-accent)]">Journey</span>
         </h2>
         <p class="text-[var(--color-foreground)]/80 mt-3 text-lg max-w-2xl mx-auto">

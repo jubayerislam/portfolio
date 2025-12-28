@@ -21,7 +21,6 @@ import About from './components/About.vue'
 import Project from './components/Project.vue'
 import Skills from './components/Skills.vue'
 import Resume from './components/Resume.vue'
-import Services from './components/Services.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 
@@ -45,6 +44,8 @@ onMounted(() => {
 
   rafId = requestAnimationFrame(raf)
 })
+
+
 
 onBeforeUnmount(() => {
   if (lenis) lenis.destroy()
