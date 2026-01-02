@@ -25,7 +25,7 @@
             <div class="border-l-2 border-[var(--color-accent)] pl-6 relative">
               <span class="absolute -left-[6px] top-1 w-3 h-3"></span>
 
-              <h4 class="font-bold text-xl">Full-Stack Developer</h4>
+              <h4 class="font-bold text-xl">Software Engineer (PHP & Laravel)</h4>
               <p class="text-[var(--color-muted-foreground)] text-sm italic">Bug Finder Ltd. — 1 September, 2022 •
                 Present</p>
 
@@ -38,7 +38,7 @@
             <div class="border-l-2 border-[var(--color-accent)] pl-6 relative">
               <span class="absolute -left-[6px] top-1 w-3 h-3"></span>
 
-              <h4 class="font-bold text-xl">Data Entry & WordPress Theme Specialist</h4>
+              <h4 class="font-bold text-xl">WordPress Theme Designer</h4>
               <p class="text-[var(--color-muted-foreground)] text-sm italic">Khalid IT — 01 October, 2020 - 05 March,
                 2021</p>
 
@@ -77,8 +77,8 @@
                 2026</p>
 
               <p class="text-[var(--color-muted-foreground)]/90 mt-3 leading-relaxed text-base">
-                Focused on software engineering fundamentals, data structures, algorithms, and modern full-stack web
-                development.
+                Focused on software engineering fundamentals, data structures, algorithms, artificial intelligence and modern web
+                programming.
               </p>
             </div>
 

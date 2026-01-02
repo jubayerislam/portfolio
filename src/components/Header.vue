@@ -15,7 +15,7 @@
         <div class="flex flex-col items-start -space-y-2 transition-all group-hover:scale-[1.03]">
           <span class="text-[11px] font-light tracking-[0.25em]
                        text-[var(--color-muted-foreground)] uppercase">
-            Developer
+            Portfolio
           </span>
 
           <span class="text-2xl font-medium tracking-tight
@@ -42,7 +42,7 @@
       <div class="flex items-center gap-4">
         <button class="px-4 py-2 bg-[var(--color-button-accent)] text-sm font-medium text-[var(--color-button-text)] rounded-lg font-medium
                 hover:scale-[1.03] shadow-sm
-                transition-all duration-300 cursor-pointer">
+                transition-all duration-300 cursor-pointer" @click.prevent="scrollToSection('contact')">
           Get Started
         </button>
 

@@ -12,7 +12,7 @@
 
       <div class="flex gap-3">
         <a
-            href="https://github.com/jubayerislam"
+            href="https://github.com/jubayerislam" target="_blank"
             aria-label="Visit my Github profile"
             class="flex items-center justify-center w-10 h-10 rounded-full
                bg-[var(--color-muted)]
@@ -24,7 +24,7 @@
         </a>
 
         <a
-            href="https://www.linkedin.com/in/md-jubayer-islam-230282207/"
+            href="https://www.linkedin.com/in/md-jubayer-islam-230282207/" target="_blank"
             aria-label="Visit my LinkedIn profile"
             class="flex items-center justify-center w-10 h-10 rounded-full
                bg-[var(--color-muted)]
@@ -36,7 +36,7 @@
         </a>
 
         <a
-            href="https://www.facebook.com/jubayer.islam.5473/"
+            href="https://www.facebook.com/jubayer.islam.5473/" target="_blank"
             aria-label="Visit my Facebook profile"
             class="flex items-center justify-center w-10 h-10 rounded-full
                bg-[var(--color-muted)]
@@ -48,7 +48,7 @@
         </a>
 
         <a
-            href="https://x.com/Jubayer_Islam7"
+            href="https://x.com/Jubayer_Islam7" target="_blank"
             aria-label="Visit my Twitter profile"
             class="flex items-center justify-center w-10 h-10 rounded-full
                bg-[var(--color-muted)]

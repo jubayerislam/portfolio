@@ -16,7 +16,7 @@
         <!-- Intro Text -->
         <p class="text-lg sm:text-xl text-[var(--color-muted-foreground)]/90 leading-relaxed
            mx-auto mt-4">
-          I’m Md. Jubayer Islam, a Full-Stack Developer passionate about crafting scalable and beautiful
+          I’m Md. Jubayer Islam, a Software Engineer passionate about crafting scalable and beautiful
           web experiences. I love turning ideas into functional, user-friendly products with clean code.
         </p>
       </div>

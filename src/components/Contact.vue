@@ -128,26 +128,26 @@
           <p class="text-muted-foreground mb-4">Visit my social profile and get connected</p>
           <div class="flex gap-3">
             <a
-                href="https://github.com/jubayerislam"
+                href="https://github.com/jubayerislam" target="_blank"
                 aria-label="Visit my Github profile"
                 class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10">
               <i class="fab fa-github text-lg"></i>
             </a>
             <a
-                href="https://www.linkedin.com/in/md-jubayer-islam-230282207/"
+                href="https://www.linkedin.com/in/md-jubayer-islam-230282207/" target="_blank"
                 aria-label="Visit my LinkedIn profile"
                 class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10">
               <i class="fab fa-linkedin text-lg"></i>
             </a>
             <a
-                href="https://www.facebook.com/jubayer.islam.5473/"
+                href="https://www.facebook.com/jubayer.islam.5473/" target="_blank"
                 aria-label="Visit my Facebook profile"
                 class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10"
             >
               <i class="fab fa-facebook text-lg"></i>
             </a>
             <a
-                href="https://x.com/Jubayer_Islam7"
+                href="https://x.com/Jubayer_Islam7" target="_blank"
                 aria-label="Visit my Twitter profile"
                 class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-accent)]/5 text-muted-foreground hover:bg-[var(--color-accent)]/20 hover:text-[var(--color-accent)] transition-all duration-300 cursor-pointer border border-white/10">
               <i class="fab fa-twitter text-lg"></i>
