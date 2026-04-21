@@ -159,14 +159,7 @@
   </section>
 </template>
 <script setup>
-import {ref} from 'vue';
-import emailjs from '@emailjs/browser';
-
-// Initialize EmailJS with your credentials
-// Get these from https://dashboard.emailjs.com/admin
-const EMAILJS_PUBLIC_KEY = 'F5nE3Dp7RueqyL3JK';
-const EMAILJS_SERVICE_ID = 'service_6tuakse';
-const EMAILJS_TEMPLATE_ID = 'template_1idz9k9';
+import { ref } from 'vue';
 
 const formData = ref({
   name: '',
@@ -182,21 +175,20 @@ const handleSubmit = async () => {
   formData.value.formStatus = {message: '', type: ''};
 
   try {
-    const response = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.value.name,
-          from_email: formData.value.email,
-          subject: formData.value.subject,
-          message: formData.value.message,
-          to_email: 'jubayer.islam.dev@gmail.com', // Your email
-          reply_to: formData.value.email,
-        },
-        EMAILJS_PUBLIC_KEY
-    );
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.value.name,
+        email: formData.value.email,
+        subject: formData.value.subject,
+        message: formData.value.message
+      })
+    });
 
-    if (response.status === 200) {
+    if (response.ok) {
       formData.value.formStatus = {
         message: 'Thank you! Your message has been sent successfully.',
         type: 'success'
@@ -206,9 +198,11 @@ const handleSubmit = async () => {
       formData.value.email = '';
       formData.value.subject = '';
       formData.value.message = '';
-    } else {
-      throw new Error('Failed to send email');
+      return;
     }
+
+    const errorData = await response.json().catch(() => null);
+    throw new Error(errorData?.message || 'Failed to send message');
 
   } catch (error) {
     console.error('Form submission error:', error);
