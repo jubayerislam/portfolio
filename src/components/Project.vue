@@ -34,6 +34,8 @@
           <div
               class="relative rounded-lg overflow-hidden mb-4 aspect-video bg-gradient-to-br from-muted/50 to-muted/80">
             <img :src="project.image" :alt="project.title"
+                 loading="lazy"
+                 decoding="async"
                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                  onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/a5f3fc?text=Project';"/>
 

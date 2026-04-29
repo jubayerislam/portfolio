@@ -116,37 +116,19 @@
 
 
 <script setup lang="ts">
-
-
-import {onMounted, ref} from 'vue'
-import Lenis from 'lenis'
+import { onMounted, ref } from 'vue'
+import { scrollToSection } from '../lib/scroll'
 
 const mobileMenuOpen = ref(false)
 const theme = ref('light')
 const navItems = ['About', 'Work', 'Skills', 'Resume', 'Contact']
 
-let lenis: Lenis | null = null
-
 onMounted(() => {
-
   const saved = localStorage.getItem("theme")
   if (saved === "dark") {
     document.documentElement.setAttribute("data-theme", "dark")
     theme.value = "dark"
   }
-
-  // Initialize Lenis for smooth scrolling
-  lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,
-  })
-
-  const raf = (time: number) => {
-    lenis?.raf(time)
-    requestAnimationFrame(raf)
-  }
-  requestAnimationFrame(raf)
 })
 
 const toggleTheme = () => {
@@ -160,18 +142,5 @@ const toggleTheme = () => {
     localStorage.setItem("theme", "dark")
   }
 }
-
-function scrollToSection(id: string) {
-  if (!lenis) return
-  const target = document.getElementById(id)
-  if (target) {
-    lenis.scrollTo(target, {
-      offset: 0, // Adjust if you have a fixed header
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    })
-  }
-}
-
 
 </script>

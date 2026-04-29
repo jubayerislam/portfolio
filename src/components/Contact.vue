@@ -160,6 +160,7 @@
 </template>
 <script setup>
 import { ref } from 'vue';
+import { trackEvent } from '../lib/gtag';
 
 const formData = ref({
   name: '',
@@ -189,6 +190,11 @@ const handleSubmit = async () => {
     });
 
     if (response.ok) {
+      trackEvent('contact_form_submit', {
+        event_category: 'engagement',
+        event_label: 'portfolio_contact_form'
+      });
+
       formData.value.formStatus = {
         message: 'Thank you! Your message has been sent successfully.',
         type: 'success'

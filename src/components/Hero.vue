@@ -65,6 +65,8 @@
           <img
               :src="profileImage"
               alt="Md. Jubayer Islam - Software Engineer Portfolio"
+              fetchpriority="high"
+              decoding="async"
               class="w-full h-full rounded-full object-cover
                  transform hover:scale-105 transition-transform duration-500"/>
 
@@ -80,56 +82,9 @@
 
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
-import Lenis from 'lenis'
+import { scrollToSection } from '../lib/scroll'
 
 const profileImage = 'img/jubayer-profile.png'
-
-// Use ref to make lenis reactive
-const lenis = ref(null)
-
-// Initialize Lenis
-const initLenis = () => {
-  lenis.value = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smooth: true,
-  })
-
-  function raf(time) {
-    lenis.value?.raf(time)
-    requestAnimationFrame(raf)
-  }
-
-  requestAnimationFrame(raf)
-}
-
-// Scroll function
-function scrollToSection(id) {
-  if (!lenis.value) {
-    console.error('Lenis is not initialized')
-    return
-  }
-
-  const target = document.getElementById(id)
-  if (target) {
-    lenis.value.scrollTo(target, {
-      offset: 0,
-      duration: 1.2,
-    })
-  }
-}
-
-// Lifecycle hooks
-onMounted(() => {
-  initLenis()
-})
-
-onUnmounted(() => {
-  if (lenis.value) {
-    lenis.value.destroy()
-  }
-})
 </script>
 
 <style scoped>
