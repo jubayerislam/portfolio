@@ -15,9 +15,8 @@
 
         <!-- Intro Text -->
         <p class="text-lg sm:text-xl text-[var(--color-muted-foreground)]/90 leading-relaxed
-           mx-auto mt-4">
-          I’m Md. Jubayer Islam, a Software Engineer passionate about crafting scalable and beautiful
-          web experiences. I love turning ideas into functional, user-friendly products with clean code.
+            mx-auto mt-4 text-left sm:text-justify">
+          I’m Md. Jubayer Islam, a results-driven Full-Stack Software Engineer specializing in building scalable web architectures, secure payment integrations, and responsive user interfaces. With a strong foundation in PHP/Laravel and Vue.js/Inertia.js, I bridge the gap between robust back-end systems and clean, intuitive front-end experiences. I am dedicated to writing clean, maintainable code, optimizing database performance, and delivering production-ready applications that drive business value.
         </p>
       </div>
 
@@ -27,12 +26,12 @@
 
         <!-- Card Component -->
         <template v-for="item in [
-        { title: 'Clean Code', text: 'Writing maintainable and efficient code that scales.' },
-        { title: 'UX Focused', text: 'Designing interfaces that are intuitive and visually appealing.' },
-        { title: 'Problem Solver', text: 'Tackling challenges efficiently with creative solutions.' },
-        { title: 'APIs & Integration', text: 'Seamless integration of third-party APIs and payment gateways.' },
-        { title: 'Database & Backend', text: 'Optimized database design & robust backend solutions.' },
-        { title: 'Collaboration', text: 'Working effectively with clients and teams worldwide.' }]">
+        { title: 'Clean Code', text: 'Writing maintainable, well-structured, and efficient code that scales.' },
+        { title: 'UX Focused', text: 'Engineering intuitive, visually appealing user interfaces that maximize engagement.' },
+        { title: 'Problem Solver', text: 'Analyzing complex technical issues and implementing optimal solutions.' },
+        { title: 'API Integration', text: 'Integrating secure payment gateways, third-party services, and REST APIs.' },
+        { title: 'Backend & Database', text: 'Designing optimized database schemas, caching layers, and high-performance server architectures.' },
+        { title: 'Team Player', text: 'Collaborating effectively with cross-functional teams and clients globally to deliver projects.' }]">
           <div
               class="p-6 bg-[var(--color-card-muted)]/40 rounded-xl border border-[var(--color-accent)]/10
                  shadow-sm hover:shadow-[var(--color-card-accent)]/20

@@ -43,7 +43,7 @@
         <button class="px-4 py-2 bg-[var(--color-button-accent)] text-sm font-medium text-[var(--color-button-text)] rounded-lg font-medium
                 hover:scale-[1.03] shadow-sm
                 transition-all duration-300 cursor-pointer" @click.prevent="scrollToSection('contact')">
-          Get Started
+          Hire Me
         </button>
 
         <!-- Theme Toggle -->
@@ -125,9 +125,14 @@ const navItems = ['About', 'Work', 'Skills', 'Resume', 'Contact']
 
 onMounted(() => {
   const saved = localStorage.getItem("theme")
-  if (saved === "dark") {
+
+  if (saved === null || saved === "dark") {
     document.documentElement.setAttribute("data-theme", "dark")
     theme.value = "dark"
+    localStorage.setItem("theme", "dark") // প্রথমবারের জন্য save করো
+  } else {
+    document.documentElement.removeAttribute("data-theme")
+    theme.value = "light"
   }
 })
 

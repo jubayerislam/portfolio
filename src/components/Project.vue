@@ -6,7 +6,7 @@
       <div class="mb-16 text-center">
         <h2 class="text-4xl font-mono sm:text-5xl font-bold text-[var(--color-foreground)] mb-4">Portfolio
           Highlights</h2>
-        <p class="text-muted-foreground text-lg font-mono max-w-2xl mx-auto">
+        <p class="text-[var(--color-muted-foreground)]/80 text-lg font-mono max-w-2xl mx-auto">
           A curated selection of projects that reflect my passion for crafting clean, functional, and impactful digital
           experiences.
         </p>
@@ -93,7 +93,7 @@
               <h2 class="text-4xl sm:text-5xl font-bold text-foreground mb-3">
                 {{ activeProject.title }}
               </h2>
-              <p class="text-lg sm:text-xl text-muted-foreground/80 leading-relaxed max-w-2xl mx-auto">
+              <p class="text-lg sm:text-xl text-[var(--color-muted-foreground)]/80 leading-relaxed max-w-2xl mx-auto">
                 {{ activeProject.description }}
               </p>
             </header>
@@ -115,9 +115,9 @@
                 <h3 class="text-sm uppercase tracking-widest text-[var(--color-accent)] font-semibold mb-3">
                   Project Overview
                 </h3>
-                <p class="text-muted-foreground leading-relaxed" v-html="activeProject.projectOverview">
+                <div class="text-[var(--color-muted-foreground)]/80 leading-relaxed project-overview-content" v-html="activeProject.projectOverview">
 
-                </p>
+                </div>
               </div>
             </section>
 
@@ -164,25 +164,6 @@ const filterTags = ['All', 'Individual', 'Collaboration', 'Learning', 'Contribut
 
 const projects = [
   {
-    id: 1,
-    title: 'Admin Dashboard',
-    category: 'Backend Development',
-    description:
-        'Centralized dashboard with integrated payments, payouts, and automated SMS/email notifications.',
-    projectOverview: '<p><strong>Admin Dashboard:</strong> I developed a fully functional and scalable Admin Dashboard for Bugfinder, designed to manage 40+ backend projects efficiently. The dashboard provides complete system control and analytics, including real-time user tracking, deposits, transactions, and login monitoring..</p>\n' +
-        '<p><strong>Advanced Analytics & Reporting:</strong> Interactive graphs and charts for deposits, transactions, and overall system performance..</p>\n' +
-        '<p><strong>Comprehensive Payment Integration:</strong> Supports multiple payment gateways such as Stripe, PayPal, Razorpay, bKash, Nagad, Izico, Binance, Instamoto, and more.</p>\n' +
-        '<p><strong>Communication Services:</strong> Integrated with leading SMS providers (Twilio, Infobip, Vonage) and email services (Amazon S3, Mailgun, SendGrid) for seamless notifications.</p>\n' +
-        '<p><strong>Real-Time Systems:</strong> Support ticket management, in-app notifications using Laravel Pusher broadcasting, event listeners, and push notifications via Firebase.</p>\n' +
-        '<p><strong>User & Security Management:</strong> Full user management, KYC verification, 2FA authentication, and role-based access control.</p>\n'+
-        '<p><strong>Dynamic & Flexible Architecture:</strong> Dynamic page routing, automatic currency updates via payment APIs, and text translation using Azure API.</p>\n',
-    tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
-    tags: ['Individual'],
-    image: "/img/projects/admin.png",
-    url: "https://smm-matrix.bugfinder.app/",
-
-  },
-  {
     id: 2,
     title: 'Bug Finder',
     category: 'Full-Stack',
@@ -217,6 +198,37 @@ const projects = [
     url: "https://smm-matrix.bugfinder.app/",
   },
   {
+    id: 9,
+    title: 'Remito - A Complete Remittance Solution',
+    category: 'Backend Development',
+    description:
+        'A secure global money transfer and remittance platform supporting live exchange rates, automated currency conversions, and multi-channel payouts.',
+    projectOverview: '<p><strong>Admin Panel:</strong> Manage sender/recipient verifications, monitor global money transfers, manage payout agents, and configure currency conversion margins.</p>\n' +
+        '  <p><strong>User Portal:</strong> Calculate real-time transaction fees and exchange rates, send money securely using international checkouts, and track payment delivery status.</p>\n' +
+        '  <p><strong>Exchange Rates & Webhooks:</strong> Integrated with exchange rate APIs for real-time currency pricing, featuring automated payout processing using payment networks.</p>\n' +
+        '  <p><strong>Core Technology:</strong> Powered by PHP Laravel, MySQL database, and a responsive frontend utilizing jQuery, Bootstrap, CSS, and HTML.</p>\n',
+    tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
+    tags: ['Collaboration'],
+    image: "/img/projects/remito.png",
+    url: "https://remito.bugfinder.app/",
+  },
+  {
+    id: 10,
+    title: 'Pay Secure – Secure Payment For Global Economy',
+    category: 'Backend Development',
+    description:
+        'A secure, scalable online payment gateway and merchant services platform supporting multi-currency transactions, payout processing, and seamless API integration.',
+    projectOverview: '<p><strong>Admin Dashboard:</strong> Manage merchants, track global transactions, process payouts/settlements, monitor refunds, and generate comprehensive financial reports.</p>\n' +
+        '  <p><strong>Merchant Dashboard:</strong> Allows merchants to generate API keys, track real-time payments, request payouts, manage refund requests, and configure webhook notifications.</p>\n' +
+        '  <p><strong>API & Webhook Integration:</strong> Standardized RESTful API endpoints and secure webhooks for seamless integration with external e-commerce platforms and instant payment IPNs.</p>\n' +
+        '  <p><strong>Payment Gateway Integration:</strong> Integrated with multiple payment methods (Stripe, PayPal, Binance, Cryptomus, credit cards, bKash, Nagad) supporting global multi-currency payments.</p>\n' +
+        '  <p><strong>Technology & Security:</strong> Built with Vue.js (in Blade templates), Laravel, MySQL, RESTful APIs, 2FA, API token authentication, and fraud-detection rules to ensure secure transactions.</p>\n',
+    tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'Rest API', 'BootStrap', 'Jquery'],
+    tags: ['Collaboration'],
+    image: "/img/projects/pay-secure.png",
+    url: "https://pay-secure.bugfinder.app/",
+  },
+  {
     id: 4,
     title: 'Yes Cable – Inventory Management Platform',
     category: 'Backend Development',
@@ -238,9 +250,14 @@ const projects = [
     title: 'Techpack – Garment Specification Design',
     category: 'Full-Stack',
     description:
-        'A detailed production-ready design document that communicates specifications, materials, measurements, and construction details for manufacturing.',
-    projectOverview: 'A scalable, high-performance platform built with Vue 3, Node.js, and Redis caching to efficiently manage complex workflows and deliver an optimized user experience.',
-    tech: ['Vue.js', 'Inertia.js', 'PHP', 'Laravel', 'MySql', 'BootStrap', 'API', 'WebSocket'],
+        'A collaborative web platform for fashion designers and manufacturers to create, share, and manage production-ready apparel specification sheets.',
+    projectOverview: '<p><strong>Techpack Builder:</strong> Interactive tools to build comprehensive tech packs, including measurement charts, bill of materials (BOM), annotations, and sketches.</p>\n' +
+        '  <p><strong>Inertia.js & Vue SPA:</strong> Utilizes Inertia.js to seamlessly combine the power of a Laravel backend with a highly reactive Vue.js single-page application frontend.</p>\n' +
+        '  <p><strong>Real-Time Collaboration:</strong> Integrated WebSockets to allow designers and manufacturers to collaborate on revisions, leave comments, and track design approvals in real time.</p>\n' +
+        '  <p><strong>Subscription & Payments:</strong> Integrated Stripe and Lemon Squeezy payment engines to manage global SaaS subscriptions, recurring billing, customer invoice portals, and webhook-driven plan management.</p>\n' +
+        '  <p><strong>Export Engine:</strong> Custom document generator that builds and exports print-ready, high-fidelity PDF specification documents for garment factories.</p>\n' +
+        '  <p><strong>Core Stack:</strong> Powered by PHP Laravel, Vue.js, Inertia.js, MySQL database management, and Bootstrap for the editor layout.</p>\n',
+    tech: ['Vue.js', 'Inertia.js', 'PHP', 'Laravel', 'MySql', 'BootStrap', 'API', 'WebSocket', 'Stripe', 'Lemon Squeezy'],
     tags: ['Individual'],
     image: "/img/projects/techpack.png",
     url: "https://techpack.design/",
@@ -251,10 +268,11 @@ const projects = [
     category: 'Backend Development',
     description:
         'A comprehensive booking and online commerce platform designed for barber shops, salons, and spa service providers.',
-    projectOverview: '<p><strong>Admin Dashboard:</strong> Manage users, orders, products, services, appointments, plans, and system settings, with full control and advanced analytics.</p>\n' +
-        '  <p><strong>User Dashboard:</strong> Manage appointments and orders, choose plans, submit support tickets, secure your account with 2FA, make payments, and update profile settings.</p>\n' +
-        '  <p><strong>Payment Gateway:</strong> Integrated with multiple payment gateways, including Stripe, PayPal, Binance, etc., to handle secure transactions and support multi-currency payments..</p>\n' +
-        '  <p><strong>Technology:</strong> Built with a modern frontend using Jquery & Javascript, a backend powered by PHP and Laravel, MySQL database, multi-language capabilities, and security features like 2FA.</p>\n',
+    projectOverview: '<p><strong>Admin Dashboard:</strong> Manage salon branches, stylist profiles, services catalog, appointment calendars, and customer records with detailed business analytics.</p>\n' +
+        '  <p><strong>Booking Scheduler:</strong> A real-time appointment booking interface allowing clients to select services, choose stylists, and reserve available time slots seamlessly.</p>\n' +
+        '  <p><strong>User Dashboard:</strong> Allows clients to schedule bookings, track order status, submit support tickets, make secure online payments, and manage profile settings.</p>\n' +
+        '  <p><strong>Payment Gateways:</strong> Integrated with multiple payment gateways like Stripe, PayPal, and Binance to handle secure online transactions and booking deposits.</p>\n' +
+        '  <p><strong>Core Stack:</strong> Built with a frontend using HTML, CSS, JavaScript, Bootstrap, and jQuery, powered by PHP and Laravel with a MySQL database.</p>\n',
     tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
     tags: ['Individual'],
     image: "/img/projects/groomify.png",
@@ -266,10 +284,11 @@ const projects = [
     category: 'Backend Development',
     description:
         'A comprehensive online platform for construction businesses, combining project management, service promotion, and client engagement.',
-    projectOverview: '<p><strong>Admin Dashboard:</strong> Manage users, orders, products, services, appointments, plans, and system settings, with full control and advanced analytics.</p>\n' +
-        '  <p><strong>User Dashboard:</strong> Manage appointments and orders, choose plans, submit support tickets, secure your account with 2FA, make payments, and update profile settings.</p>\n' +
-        '  <p><strong>Payment Gateway:</strong> Integrated with multiple payment gateways, including Stripe, PayPal, Binance, etc., to handle secure transactions and support multi-currency payments..</p>\n' +
-        '  <p><strong>Technology:</strong> Built with a modern frontend using Jquery & Javascript, a backend powered by PHP and Laravel, MySQL database, multi-language capabilities, and security features like 2FA.</p>\n',
+    projectOverview: '<p><strong>Admin Panel:</strong> Track project construction phases, monitor budgets/costs, manage contractor profiles, handle inquiries, and update the portfolio showcase.</p>\n' +
+        '  <p><strong>Client Portal:</strong> Allows clients to submit custom project requests, track progress status, check billing details, and communicate with construction managers.</p>\n' +
+        '  <p><strong>Project Portfolio & Estimator:</strong> Features dynamic showcases of completed construction projects and an interactive cost calculator for incoming service estimation.</p>\n' +
+        '  <p><strong>Multi-Currency Invoice Support:</strong> Handles diverse client contracts and payments with support for international currencies and standard secure payment checkouts.</p>\n' +
+        '  <p><strong>Core Stack:</strong> Built on PHP Laravel, MySQL backend database, and a responsive frontend framework utilizing jQuery, Bootstrap, CSS, and HTML.</p>\n',
     tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
     tags: ['Individual'],
     image: "/img/projects/contrum.png",
@@ -281,61 +300,48 @@ const projects = [
     category: 'Backend Development',
     description:
         'A unified platform for booking car services, managing vehicle maintenance schedules, and coordinating auto repair services with real-time updates and service management tools.',
-    projectOverview: '<p><strong>Admin Dashboard:</strong> Manage users, orders, products, services, appointments, plans, and system settings, with full control and advanced analytics.</p>\n' +
-        '  <p><strong>User Dashboard:</strong> Manage appointments and orders, choose plans, submit support tickets, secure your account with 2FA, make payments, and update profile settings.</p>\n' +
-        '  <p><strong>Payment Gateway:</strong> Integrated with multiple payment gateways, including Stripe, PayPal, Binance, etc., to handle secure transactions and support multi-currency payments..</p>\n' +
-        '  <p><strong>Technology:</strong> Built with a modern frontend using Jquery & Javascript, a backend powered by PHP and Laravel, MySQL database, multi-language capabilities, and security features like 2FA.</p>\n',
+    projectOverview: '<p><strong>Admin Dashboard:</strong> Manage vehicle repair orders, mechanic assignments, services catalog, parts inventory, and appointments with comprehensive reporting.</p>\n' +
+        '  <p><strong>Booking & Scheduling:</strong> A vehicle service scheduler allowing customers to book service packages, select mechanical experts, and pick convenient drop-off times.</p>\n' +
+        '  <p><strong>Customer Portal:</strong> Track live repair progress, view historical vehicle service records, manage active invoices, and handle digital payment checkouts.</p>\n' +
+        '  <p><strong>Core Technology:</strong> Developed using standard web technologies (HTML, CSS, Bootstrap, JavaScript, jQuery) with a reliable PHP Laravel server and MySQL database.</p>\n',
     tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
     tags: ['Individual'],
     image: "/img/projects/gear-fixer.png",
     url: "https://gear-fixer.bugfinder.app/",
   },
-
   {
-    id: 9,
-    title: 'Remito - A Complete Remittance Solution',
-    category: 'Backend Development',
-    description:
-        'A unified platform for booking car services, managing vehicle maintenance schedules, and coordinating auto repair services with real-time updates and service management tools.',
-    projectOverview: '<p><strong>Admin Dashboard:</strong> Manage Sales centr. customer, manage sales, services, payments, reports, and system settings with full control and analytics.</p>\n' +
-        '  <p><strong>User Dashboard:</strong> Allows clients and resellers to place orders, track progress, manage wallet, view history, and update profile settings.</p>\n' +
-        '  <p><strong>API Integration:</strong> Supports multiple SMM service providers, automates order fulfillment, and provides endpoints for external apps.</p>\n' +
-        '  <p><strong>Payment Gateway:</strong> Integrated with multiple payment gateways, including Stripe, PayPal, Binance, Cryptomus, bKash, Nagad, etc., to handle secure transactions and support multi-currency payments..</p>\n' +
-        '  <p><strong>Technology:</strong> Built with a modern frontend using Vue.js (with Blade templates), a backend powered by PHP and Laravel, MySQL database, RESTful APIs, PWA support, multi-currency and multi-language capabilities, and security features like 2FA.</p>\n',
-    tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
-    tags: ['Collaboration'],
-    image: "/img/projects/remito.png",
-    url: "https://remito.bugfinder.app/",
-  },
-
-  {
-    id: 10,
+    id: 11,
     title: 'Healing Hub – E-Commerce Platform',
     category: 'Backend Development',
     description:
         'A modern e-commerce platform designed to deliver seamless product browsing, cash on delivery, and efficient order management.',
-    projectOverview: 'A scalable, high-performance platform built with Vue 3, Node.js, and Redis caching to efficiently manage complex workflows and deliver an optimized user experience.',
+    projectOverview: '<p><strong>Product & Order Management:</strong> Advanced product catalog search, shopping cart features, cash on delivery (COD) checkouts, and order processing controls.</p>\n' +
+        '  <p><strong>Admin Dashboard:</strong> Manage inventory stock levels, order status updates, customer records, and integrate marketing tracking pixels.</p>\n' +
+        '  <p><strong>Meta Pixel Integration:</strong> Integrated Meta (Facebook) Tracking Pixels to track user activity, checkouts, and custom conversion events for ad campaign optimization.</p>\n' +
+        '  <p><strong>Core Stack:</strong> Developed using PHP Laravel for back-end logic, MySQL database, and Bootstrap/jQuery for the customer facing e-commerce store.</p>\n',
     tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'Meta Pixel', 'BootStrap', 'Jquery'],
     tags: ['Individual'],
     image: "/img/projects/healing-hub.png",
     url: "https://healinghubbd.com/",
   },
-
   {
-    id: 11,
+    id: 12,
     title: 'StarryHire - Freelancers, Influencers, and the Job Market',
     category: 'Backend Development',
     description:
         'StarryHire is a next-generation platform that bridges freelancers, influencers, and companies through smart hiring, collaboration, and opportunity discovery.',
-    projectOverview: 'Responsible for ongoing bug fixes, feature development, frontend enhancements, and continuous client support to ensure platform stability, performance, and an improved user experience.',
+    projectOverview: '<p><strong>Campaign & Job Board:</strong> Companies can post specialized job openings, contract-based gigs, or influencer marketing campaigns to discover top talent.</p>\n' +
+        '  <p><strong>Talent Discovery:</strong> Advanced search and filtering tools for companies to find freelancers and influencers based on skills, niche, engagement rates, and region.</p>\n' +
+        '  <p><strong>Collaboration Tools:</strong> Features to support communication, milestone tracking, secure agreement configurations, and delivery of digital deliverables.</p>\n' +
+        '  <p><strong>My Contributions:</strong> Responsible for ongoing bug fixes, implementing new RESTful API endpoints, developing database optimizations, and making frontend enhancements for a smoother user experience.</p>\n' +
+        '  <p><strong>Technology Stack:</strong> Built using PHP and Laravel for the backend, MySQL database storage, and a responsive frontend powered by JavaScript, jQuery, and Bootstrap.</p>\n',
     tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
     tags: ['Contribute'],
     image: "/img/projects/staryhire.png",
     url: "https://starryhire.bugfinder.app/",
   },
-
   {
-    id: 11,
+    id: 13,
     title: 'Portfolio - Software Engineer Portfolio',
     category: 'Full-Stack',
     description:
@@ -346,7 +352,24 @@ const projects = [
     tags: ['Learning'],
     image: "/img/projects/portfolio.png",
     url: "https://jubayerislam.vercel.app/",
-
+  },
+  {
+    id: 1,
+    title: 'Admin Dashboard',
+    category: 'Backend Development',
+    description:
+        'Centralized dashboard with integrated payments, payouts, and automated SMS/email notifications.',
+    projectOverview: '<p><strong>Admin Dashboard:</strong> I developed a fully functional and scalable Admin Dashboard for Bugfinder, designed to manage 40+ backend projects efficiently. The dashboard provides complete system control and analytics, including real-time user tracking, deposits, transactions, and login monitoring..</p>\n' +
+        '<p><strong>Advanced Analytics & Reporting:</strong> Interactive graphs and charts for deposits, transactions, and overall system performance..</p>\n' +
+        '<p><strong>Comprehensive Payment Integration:</strong> Supports multiple payment gateways such as Stripe, PayPal, Razorpay, bKash, Nagad, Izico, Binance, Instamoto, and more.</p>\n' +
+        '<p><strong>Communication Services:</strong> Integrated with leading SMS providers (Twilio, Infobip, Vonage) and email services (Amazon S3, Mailgun, SendGrid) for seamless notifications.</p>\n' +
+        '<p><strong>Real-Time Systems:</strong> Support ticket management, in-app notifications using Laravel Pusher broadcasting, event listeners, and push notifications via Firebase.</p>\n' +
+        '<p><strong>User & Security Management:</strong> Full user management, KYC verification, 2FA authentication, and role-based access control.</p>\n'+
+        '<p><strong>Dynamic & Flexible Architecture:</strong> Dynamic page routing, automatic currency updates via payment APIs, and text translation using Azure API.</p>\n',
+    tech: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'BootStrap', 'Jquery'],
+    tags: ['Individual'],
+    image: "/img/projects/admin.png",
+    url: "https://smm-matrix.bugfinder.app/",
   }
 ]
 
@@ -399,8 +422,8 @@ const closeModal = () => {
   animation: fade-in 0.6s ease-out forwards;
 }
 
-.text-muted-foreground {
-  color: hsl(240, 4%, 47%);
+:deep(.project-overview-content strong) {
+  color: var(--color-foreground);
 }
 
 </style>
