@@ -10,6 +10,7 @@
       <Contact/>
       <Footer/>
     </main>
+    <AiTerminal />
   </div>
 </template>
 
@@ -25,4 +26,5 @@ const Resume = defineAsyncComponent(() => import('./components/Resume.vue'))
 const Project = defineAsyncComponent(() => import('./components/Project.vue'))
 const Contact = defineAsyncComponent(() => import('./components/Contact.vue'))
 const Footer = defineAsyncComponent(() => import('./components/Footer.vue'))
+const AiTerminal = defineAsyncComponent(() => import('./components/AiTerminal.vue'))
 </script>
