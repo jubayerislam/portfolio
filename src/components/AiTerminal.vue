@@ -130,10 +130,10 @@ const messages = ref([])
 const chatHistoryContainer = ref(null)
 
 const suggestions = [
-  "What skills does Jaber have?",
-  "What projects has Jaber built?",
-  "What is Jaber's experience?",
-  "Can you tell me about Jaber?"
+  "What skills does Jubayer have?",
+  "What projects has Jubayer built?",
+  "What is Jubayer's experience?",
+  "Can you tell me about Jubayer?"
 ]
 
 const toggleTerminal = () => {
